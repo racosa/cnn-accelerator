@@ -12,6 +12,8 @@
 
 - [AI GitBook - ReLU Layer](https://leonardoaraujosantos.gitbooks.io/artificial-inteligence/content/relu_layer.html)
 
+- [Krizhevsky et al. - ImageNet Challenge Winner 2012](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
+
 ## Tutorials
 
 - [Python Numpy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
