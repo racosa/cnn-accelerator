@@ -1,6 +1,8 @@
 #ifndef _MAXPOOL_HPP_
 #define _MAXPOOL_HPP_
 
+#include "ac_fixed.h"
+
 class Maxpool
 {
     private:

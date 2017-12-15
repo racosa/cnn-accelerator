@@ -1,6 +1,7 @@
 #include <iostream>
 #include "maxpool.hpp"
 
+
 Maxpool::Maxpool(unsigned int input_size,
         unsigned int input_depth,
         unsigned int field_size,
