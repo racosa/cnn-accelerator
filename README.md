@@ -17,3 +17,4 @@
 ## Tutorials
 
 - [Python Numpy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
+- [C++ Template Tutorial](https://cpp.developpez.com/cours/cpp/?page=page_14)
