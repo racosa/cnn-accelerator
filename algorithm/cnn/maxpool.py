@@ -2,7 +2,6 @@ import numpy as np
 
 class Maxpool(object):
     def __init__(self, input_size, input_depth, field_size, stride):
-        # TODO: Define parameters
         self.input_size = input_size
         self.input_depth = input_depth
         self.field_size = field_size
@@ -10,12 +9,7 @@ class Maxpool(object):
         self.output_size = ((input_size - field_size)//stride) + 2
 
     def pool(self, input):
-        # TODO: Implement max pooling function
-        print('Starting max pooling ... \n')
         output = np.zeros((self.output_size,self.output_size,self.input_depth))
-        print('max pool output shape: ', output.shape)
-        print('output_size:', self.output_size)
-        #TODO: handle multiple kernels
         for z in range(self.input_depth):
             for y in range(self.output_size):
                 for x in range(self.output_size):

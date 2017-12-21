@@ -5,7 +5,6 @@ class Relu(object):
 
 
     def activate(self, input):
-        print('Starting relu activation ... \n')
         row_count = input.shape[0] 
         col_count = input.shape[1] 
         depth = input.shape[2]
