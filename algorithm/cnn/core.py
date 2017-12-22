@@ -5,36 +5,43 @@ import relu
 import maxpool
 import convolution as conv
 import fully_connected 
+import coeff as c
+import math as m
 
-img_name = 'dog2-24x24.png'
+def normalize(image):
+    mean = np.sum(image)/576
+    variance = m.sqrt(np.sum(np.power((image - mean), 2))/576)
+    normalized_image = (image - mean)/max(variance, 1/m.sqrt(576))
+    return normalized_image
+
+img_name = 'images/ship8-24x24.png'
 
 print('# Starting CNN')
 print('# Reading input image:', img_name)
 input_img = imread(img_name)
 print('# Input image shape: ',input_img.dtype, input_img.shape)
-#print(input_img)
+
+input_img = normalize(input_img)
+
 
 #k1 = [[1,1,1],[1,1,1],[1,1,1]];
 #input_img = np.stack([k1,k1,k1], axis=2)
 #print('img: ')
 #print(input_img)
 
-k0 = [[0,0,0],[0,1,0],[0,0,0]]
-kernel_one = np.stack([k0,k0,k0], axis=2)
-kernels_one = np.array([kernel_one, kernel_one, kernel_one,
-                        kernel_one, kernel_one, kernel_one])
-kernel_two = np.stack([k0,k0,k0,k0,k0,k0], axis=2)
-kernels_two = np.array([kernel_two, kernel_two, kernel_two])
-kernels_three = np.array([kernel_one, kernel_one])
+#k0 = [[0,0,0],[0,1,0],[0,0,0]]
+#kernel_one = np.stack([k0,k0,k0], axis=2)
+#kernels_one = np.array([kernel_one, kernel_one, kernel_one,
+#                        kernel_one, kernel_one, kernel_one])
+#kernel_two = np.stack([k0,k0,k0,k0,k0,k0], axis=2)
+#kernels_two = np.array([kernel_two, kernel_two, kernel_two])
+#kernels_three = np.array([kernel_one, kernel_one])
+#kernels_fc = np.zeros((18,10))
 
-kernels_fc = np.zeros((18,10))
-
-print('kernels_fc: ', kernels_fc)
-
-conv_one = {'kernels': kernels_one,
+conv_one = {'kernels': c.conv1_weights_t,
             'kernel_size' : 3,
-            'nb_kernels': 6,
-            'biases' : np.zeros(6),
+            'nb_kernels': 64,
+            'biases' : c.conv1_biases,
             'input_size': 24,
             'input_depth': 3,
             'stride': 1,
@@ -45,10 +52,10 @@ maxpool_one = {'size': 3,
                'input_size': 24,
                'input_depth': conv_one['nb_kernels']}
 
-conv_two = {'kernels': kernels_two,
+conv_two = {'kernels': c.conv2_weights_t,
             'kernel_size' : 3,
-            'nb_kernels': 3,
-            'biases' : np.zeros(3),
+            'nb_kernels': 32,
+            'biases' : c.conv2_biases,
             'input_size': 12,
             'input_depth': conv_one['nb_kernels'],
             'stride': 1,
@@ -60,10 +67,10 @@ maxpool_two = {'size': 3,
                'input_depth': conv_two['nb_kernels']}
 
 
-conv_three = {'kernels': kernels_three,
+conv_three = {'kernels': c.conv3_weights_t,
               'kernel_size' : 3,
-              'nb_kernels': 2,
-              'biases' : np.zeros(2),
+              'nb_kernels': 20,
+              'biases' : c.conv3_biases,
               'input_size': 6,
               'input_depth': conv_two['nb_kernels'],
               'stride': 1,
@@ -74,8 +81,8 @@ maxpool_three = {'size': 3,
                  'input_size': 6,
                  'input_depth': conv_three['nb_kernels']}
 
-fc =  {'kernels': kernels_fc,
-       'biases': np.ones(10)}
+fc =  {'kernels': c.local3_weights,
+       'biases': c.local3_biases}
 
 
 relu_layer = relu.Relu([]);
@@ -158,10 +165,12 @@ print('# Maxpool Layer Three output shape: ', maxpool_three_output.shape)
 
 print('# Reshaping output ...')
 reshape_output = maxpool_three_output.reshape(1,-1)
-print('# Reshape output: ')
-print(reshape_output)
+#print('# Reshape output: ')
+#print(reshape_output)
 
 print('# Fully Connected Layer ...')
 fc_output = fc_layer.classify(reshape_output)
 print('# Fully Connected Layer output: ', fc_output)
 #imsave('output.jpg', maxpool_one_output)
+
+print('# Max value index: ', np.argmax(fc_output))   
