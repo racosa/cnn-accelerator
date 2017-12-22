@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include "maxpool.hpp"
 
 
@@ -42,4 +42,4 @@ float** Maxpool::pool(float **input){
 
     return output;
 
-}
+}*/

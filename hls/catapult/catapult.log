@@ -1,0 +1,378 @@
+//  Catapult University Version 10.0a/269363 (Production Release) Wed Nov  9 17:38:00 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux xph3sei702@ocaepc53 3.16.0-4-amd64 #1 SMP Debian 3.16.43-2+deb8u3 (2017-08-15) x86_64
+//  
+//  Package information: SIFLIBS v23.0_1.0, HLS_PKGS v23.0_1.0, 
+//                       DesignPad v2.78_1.0
+//  
+//  This version may only be used for academic purposes.  Some optimizations 
+//  are disabled, so results obtained from this version may be sub-optimal.
+//  
+//  Start time Fri Dec 22 10:47:11 2017
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log4355a0282523.0"
+# Launching web browser to open http://www.mentor.com/hls-lp/catapult-high-level-synthesis/
+set_working_dir /tp/xph3sei/xph3sei702/cnn-accelerator/hls/catapult
+solution file add ../src/relu.cpp
+# /INPUTFILES/1
+solution file add ../src/main.cpp
+# /INPUTFILES/2
+solution file add ../include/relu.hpp
+# /INPUTFILES/3
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Moving session transcript to file "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/catapult/catapult.log"
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: /usr/include/zlib.h(34): cannot open source file "zconf.h" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 0.46 seconds, memory usage 1249872kB, peak memory usage 1249872kB (SOL-9)
+# Error: go analyze: Failed analyze
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: /usr/include/zlib.h(34): cannot open source file "zconf.h" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 0.39 seconds, memory usage 1249872kB, peak memory usage 1249872kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file remove /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp
+# Info: Branching solution 'solution.v2' at state 'new' (PRJ-2)
+solution remove -solution solution.v2
+# solution.v2
+go new
+solution file remove /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp
+# Info: Branching solution 'solution.v3' at state 'new' (PRJ-2)
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v3' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: /usr/include/zlib.h(34): cannot open source file "zconf.h" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v3': elapsed time 0.35 seconds, memory usage 1249872kB, peak memory usage 1249872kB (SOL-9)
+# Error: go analyze: Failed analyze
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v3' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: /usr/include/zlib.h(34): cannot open source file "zconf.h" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v3': elapsed time 0.37 seconds, memory usage 1249872kB, peak memory usage 1249872kB (SOL-9)
+# Error: go analyze: Failed analyze
+project new -name test_relu
+solution file add ../src/main.cpp
+# /INPUTFILES/1
+solution file add ../src/relu.cpp
+# /INPUTFILES/2
+solution file remove /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp
+solution file add ../src/main.cpp
+# /INPUTFILES/3
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v1' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v1': elapsed time 0.11 seconds, memory usage 1249872kB, peak memory usage 1249872kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file add ../include/relu.hpp
+# Info: Branching solution 'solution.v2' at state 'new' (PRJ-2)
+# /INPUTFILES/3
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 0.09 seconds, memory usage 1249872kB, peak memory usage 1249872kB (SOL-9)
+# Error: go analyze: Failed analyze
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 0.10 seconds, memory usage 1314380kB, peak memory usage 1314380kB (SOL-9)
+# Error: go analyze: Failed analyze
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 0.10 seconds, memory usage 1314380kB, peak memory usage 1314380kB (SOL-9)
+# Error: go analyze: Failed analyze
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 0.11 seconds, memory usage 1314380kB, peak memory usage 1314380kB (SOL-9)
+# Error: go analyze: Failed analyze
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 0.10 seconds, memory usage 1314380kB, peak memory usage 1314380kB (SOL-9)
+# Error: go analyze: Failed analyze
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 0.10 seconds, memory usage 1314380kB, peak memory usage 1314380kB (SOL-9)
+# Error: go analyze: Failed analyze
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v2': elapsed time 0.11 seconds, memory usage 1314380kB, peak memory usage 1314380kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/../src/main.cpp' saved
+solution file remove {$PROJECT_HOME/../include/relu.hpp}
+# Info: Branching solution 'solution.v3' at state 'new' (PRJ-2)
+solution file add ../include/relu.h
+# /INPUTFILES/4
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v3' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.h" (CRD-1696)
+# Error: $PROJECT_HOME/../src/main.cpp(7):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v3': elapsed time 0.91 seconds, memory usage 1379916kB, peak memory usage 1379916kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file remove {$PROJECT_HOME/../include/relu.h}
+# Info: Branching solution 'solution.v4' at state 'new' (PRJ-2)
+solution file add ../include/relu.hpp
+# /INPUTFILES/4
+solution file add ../Makefile
+# /INPUTFILES/5
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/Makefile', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.h" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 0.10 seconds, memory usage 1379916kB, peak memory usage 1379916kB (SOL-9)
+# Error: go analyze: Failed analyze
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v4' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/Makefile', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.h" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v4': elapsed time 0.11 seconds, memory usage 1379916kB, peak memory usage 1379916kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution select solution.v2
+# solution.v2
+solution select solution.v3
+# solution.v3
+# File '$PROJECT_HOME/../include/relu.h' saved
+go compile
+# Info: Starting transformation 'analyze' on solution 'solution.v3' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "relu.h" (CRD-1696)
+# Error: $PROJECT_HOME/../src/main.cpp(7):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v3': elapsed time 0.84 seconds, memory usage 1379916kB, peak memory usage 1379916kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/../src/main.cpp' saved
+# File '$PROJECT_HOME/../include/relu.h' saved
+solution file remove {$PROJECT_HOME/../include/relu.h}
+# Info: Branching solution 'solution.v5' at state 'new' (PRJ-2)
+solution file add ../include/relu.hpp
+# /INPUTFILES/4
+# File '$PROJECT_HOME/../src/main.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v5' (SOL-8)
+# Warning: Unknown file type for '/tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.hpp', ignoring (SOL-6)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "include/relu.hpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v5': elapsed time 0.10 seconds, memory usage 1379916kB, peak memory usage 1379916kB (SOL-9)
+# Error: go analyze: Failed analyze
+solution file remove {$PROJECT_HOME/../include/relu.hpp}
+# Info: Branching solution 'solution.v6' at state 'new' (PRJ-2)
+solution file add ../include/relu.h
+# /INPUTFILES/4
+# File '$PROJECT_HOME/../src/main.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(7): cannot open source file "include/relu.h" (CRD-1696)
+# Error: $PROJECT_HOME/../src/main.cpp(7):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 0.73 seconds, memory usage 1379916kB, peak memory usage 1379916kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/../src/main.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(15): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(15):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(16): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(16):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../src/relu.cpp(1): cannot open source file "relu.hpp" (CRD-1696)
+# Error: $PROJECT_HOME/../src/relu.cpp(1):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.36 seconds, memory usage 1445452kB, peak memory usage 1445452kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/../src/relu.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(15): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(15):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(16): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(16):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../src/relu.cpp(1): cannot open source file "relu.h" (CRD-1696)
+# Error: $PROJECT_HOME/../src/relu.cpp(1):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.28 seconds, memory usage 1445452kB, peak memory usage 1445452kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/../src/main.cpp' saved
+# File '$PROJECT_HOME/../src/relu.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17): space required between adjacent ">" delimiters of nested template argument lists (">>" is the right shift operator) (CRD-868)
+# Error: $PROJECT_HOME/../include/relu.h(17):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-868)
+# Error: $PROJECT_HOME/../src/main.cpp(38): no suitable user-defined conversion from "std::vector<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>" to "std::vector<<error-type>, std::allocator<<error-type>>>" exists (CRD-312)
+# Error: $PROJECT_HOME/../src/main.cpp(38):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-312)
+# Error: $PROJECT_HOME/../src/main.cpp(38): no operator "=" matches these operands (CRD-349)
+# Error: $PROJECT_HOME/../src/main.cpp(38):             operand types are: std::vector<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>> = std::vector<<error-type>, std::allocator<<error-type>>> (CRD-349)
+# Error: $PROJECT_HOME/../src/main.cpp(38):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp" (CRD-349)
+# Error: $PROJECT_HOME/../src/relu.cpp(1): cannot open source file "relu.h" (CRD-1696)
+# Error: $PROJECT_HOME/../src/relu.cpp(1):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.24 seconds, memory usage 1445452kB, peak memory usage 1445452kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/../include/relu.h' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Error: $PROJECT_HOME/../src/relu.cpp(1): cannot open source file "relu.h" (CRD-1696)
+# Error: $PROJECT_HOME/../src/relu.cpp(1):           detected during compilation of secondary translation unit "/tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp" (CRD-1696)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'new' on solution 'solution.v6': elapsed time 1.36 seconds, memory usage 1445452kB, peak memory usage 1445452kB (SOL-9)
+# Error: go analyze: Failed analyze
+# File '$PROJECT_HOME/../src/relu.cpp' saved
+go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# Source file analysis completed (CIN-68)
+# Info: Completed transformation 'analyze' on solution 'solution.v6': elapsed time 2.34 seconds, memory usage 1642060kB, peak memory usage 1642060kB (SOL-9)
+go compile
+# Info: Starting transformation 'compile' on solution 'solution.v6' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# Error: No design detected (CIN-21)
+# Error: Design hierarchy must be selected interactively or using pragma 'hls_design top' (CIN-21)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'analyze' on solution 'solution.v6': elapsed time 1.26 seconds, memory usage 1642060kB, peak memory usage 1642060kB (SOL-9)
+# Error: go compile: Failed compile
+directive set -DESIGN_HIERARCHY main
+# CU_DESIGN sid7 ADD {} {VERSION v7 SID sid7 BRANCH_SID sid6 BRANCH_STATE analyze INCREMENTAL 0 STATE analyze TRANSFORMING 0 SOLUTION_DIR {} SYNTHESIS_FLOWPKG {} STATES {} INPUTFILES {} OUTPUTFILES {} TECHCONFIG {} TECHLIBS {} ESTIMATOR {} FLOWPKGS {} DATUM {} MESSAGES {} ALLOCS {} DIRAPPLIES {} SID_DATA {} PROPERTIES {} name solution}: Race condition
+# Info: Branching solution 'solution.v7' at state 'analyze' (PRJ-2)
+# /DESIGN_HIERARCHY main
+go compile
+# Info: Starting transformation 'compile' on solution 'solution.v7' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# Found top design routine 'main' specified by directive (CIN-52)
+# $PROJECT_HOME/../src/main.cpp(9): Synthesizing routine 'main' (CIN-13)
+# $PROJECT_HOME/../src/main.cpp(9): Inlining routine 'main' (CIN-14)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(253): Inlining member function 'std::vector<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>::vector' on object 'input' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(124): Inlining member function 'std::_Vector_base<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>::_Vector_base' on object 'input' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(86): Inlining member function 'std::_Vector_base<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>::_Vector_impl::_Vector_impl' on object 'input._M_impl' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(253): Inlining member function 'std::vector<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>::vector' on object 'output' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(124): Inlining member function 'std::_Vector_base<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>::_Vector_base' on object 'output' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(86): Inlining member function 'std::_Vector_base<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>::_Vector_impl::_Vector_impl' on object 'output._M_impl' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(253): Inlining member function 'std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>::vector' on object 'vector:cctor' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(124): Inlining member function 'std::_Vector_base<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>::_Vector_base' on object 'vector:cctor' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(86): Inlining member function 'std::_Vector_base<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>::_Vector_impl::_Vector_impl' on object 'vector:cctor._M_impl' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(713): Inlining member function 'std::vector<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>::resize' on object 'input' (CIN-64)
+# $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(654): Inlining member function 'std::vector<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>, std::allocator<std::vector<std::vector<float, std::allocator<float>>, std::allocator<std::vector<float, std::allocator<float>>>>>>::size' on object 'input' (CIN-64)
+# Error: $MGC_HOME/pkgs/dcs_gcc/gcc-4.9.2/include/c++/4.9.2/bits/stl_vector.h(655): Unsupported language feature 'pointer difference' (CIN-15)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'analyze' on solution 'solution.v7': elapsed time 1.29 seconds, memory usage 1642060kB, peak memory usage 1642060kB (SOL-9)
+# Error: go compile: Failed compile
+go compile
+# Info: Starting transformation 'compile' on solution 'solution.v7' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# Error: No design detected (CIN-21)
+# Error: Design hierarchy must be selected interactively or using pragma 'hls_design top' (CIN-21)
+# Error: Compilation aborted (CIN-5)
+# Info: Completed transformation 'analyze' on solution 'solution.v7': elapsed time 1.29 seconds, memory usage 1642060kB, peak memory usage 1642060kB (SOL-9)
+# Error: go compile: Failed compile
+# Input file has changed
+go new
+solution file set {$PROJECT_HOME/../src/main.cpp} -updated
+# Info: Branching solution 'solution.v8' at state 'new' (PRJ-2)
+# Input file has changed
+solution file set {$PROJECT_HOME/../src/main.cpp} -updated
+# Input file has changed
+solution file set {$PROJECT_HOME/../src/main.cpp} -updated
+# Input file has changed
+solution file set {$PROJECT_HOME/../src/relu.cpp} -updated
+# Input file has changed
+solution new -state new -solution solution.v8 solution
+# Info: Branching solution 'solution.v9' at state 'new' (PRJ-2)
+# solution.v9
+# Input file has changed
+solution new -state new -solution solution.v9 solution
+# Info: Branching solution 'solution.v10' at state 'new' (PRJ-2)
+# solution.v10
+quit -f
+// Finish time Fri Dec 22 12:06:55 2017, time elapsed 1:19:44, peak memory 1.57GB, exit status 0

@@ -1,6 +1,6 @@
-#include "convolution.hpp"
+/*#include "convolution.hpp"
 
-/*Convolution::Convolution(float kernel[][],
+Convolution::Convolution(float kernel[][],
     unsigned int kernel_size,
     unsigned int number_of_kernels,
     unsigned int input_size,

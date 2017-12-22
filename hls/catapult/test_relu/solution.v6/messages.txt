@@ -1,0 +1,19 @@
+
+# Messages from "go compile"
+
+Completed transformation 'analyze' on solution 'solution.v6': elapsed time 2.34 seconds, memory usage 1642060kB, peak memory usage 1642060kB (SOL-9)
+Starting transformation 'compile' on solution 'solution.v6' (SOL-8)
+Generating synthesis internal form... (CIN-3)
+No design detected (CIN-21)
+Design hierarchy must be selected interactively or using pragma 'hls_design top' (CIN-21)
+Compilation aborted (CIN-5)
+
+# Messages from "go analyze"
+
+Starting transformation 'analyze' on solution 'solution.v6' (SOL-8)
+Front End called with arguments: -- /tp/xph3sei/xph3sei702/cnn-accelerator/hls/include/relu.h /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/main.cpp /tp/xph3sei/xph3sei702/cnn-accelerator/hls/src/relu.cpp (CIN-69)
+Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+Source file analysis completed (CIN-68)
+
+# Messages from "go new"
+

@@ -1,7 +1,7 @@
 #ifndef _MAXPOOL_HPP_
 #define _MAXPOOL_HPP_
 
-#include "ac_fixed.h"
+/*#include "ac_fixed.h"
 
 class Maxpool
 {
@@ -19,6 +19,6 @@ class Maxpool
         unsigned int output_size);
         ~Maxpool();
         float** pool(float** input);
-};
+};*/
 
 #endif /* _MAXPOOL_HPP_ */

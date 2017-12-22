@@ -1,0 +1,5 @@
+
+# Messages from "go new"
+
+Branching solution 'solution.v2' at state 'new' (PRJ-2)
+Launching web browser to open http://www.mentor.com/hls-lp/catapult-high-level-synthesis/

@@ -2,7 +2,7 @@
 #define _RELU_HPP_
 
 #include "ac_fixed.h"
-#include <vector>
+#include <array>
 
 class Relu
 {
@@ -14,7 +14,7 @@ public:
 	unsigned int width,
 	unsigned int depth);
     ~Relu();
-	std::vector<std::vector<std::vector <float>>> relu_layer(std::vector<std::vector<std::vector <float> >> input);
+	std::array<std::array<std::array <float, depth> width> height> relu_layer(std::array<std::array<std::array <float, depth> width> height> input);
 };
 
 #endif /* _RELU_HPP_ */
