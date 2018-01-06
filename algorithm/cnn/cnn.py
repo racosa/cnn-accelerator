@@ -55,6 +55,8 @@ def apply_cnn(images, labels):
 #images = np.transpose(images, (0,1,2,3))
 #np.save('cifar10-test-batch-images.npy', images)
 
+# Labels and images npy files must be in the same folder
+# as this file. They are in Dropbox cifar10 folder
 labels = np.load('cifar10-test-batch-labels.npy')
 images = np.load('cifar10-test-batch-normalized-images.npy')
 apply_cnn(images, labels)
