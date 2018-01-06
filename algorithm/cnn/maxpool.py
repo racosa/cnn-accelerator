@@ -1,22 +1,19 @@
 import numpy as np
+from scipy.misc import imread, imsave, imresize
 
-class Maxpool(object):
-    def __init__(self, input_size, input_depth, field_size, stride):
-        self.input_size = input_size
-        self.input_depth = input_depth
-        self.field_size = field_size
-        self.stride = stride
-        self.output_size = ((input_size - field_size)//stride) + 2
+def maxpool_forward(x):
+    p_h = 3
+    p_w = 3
+    stride = 2
+    in_h, in_w, depth = x.shape
 
-    def pool(self, input):
-        output = np.zeros((self.output_size,self.output_size,self.input_depth))
-        for z in range(self.input_depth):
-            for y in range(self.output_size):
-                for x in range(self.output_size):
-                    max = input[x*self.stride][y*self.stride][z]
-                    for j in range(self.field_size - self.output_size):
-                        for i in range(self.field_size - self.output_size):
-                            if input[x*self.stride + i][y*self.stride + j][z] > max:
-                                max = input[x*self.stride + i][y*self.stride + j][z]
-                    output[x][y][z] = max
-        return output
+    out_h = 2 + (in_h - p_h)//stride
+    out_w = 2 + (in_w - p_w)//stride
+    out = np.zeros((out_h, out_w, depth))
+    
+    for d in range(depth):
+        for h in range(0, in_h, stride):
+            for w in range(0, in_w, stride):
+                out[h//stride,w//stride,d] = np.max(x[h:h+p_h,w:w+p_w,d])
+
+    return out

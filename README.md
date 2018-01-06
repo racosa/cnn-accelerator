@@ -14,6 +14,10 @@
 
 - [Krizhevsky et al. - ImageNet Challenge Winner 2012](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
+  [Intuitive Explanation to ConvNets](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/)
+
+  [Convolution](https://beckernick.github.io/convolutions/)
+
 ## Tutorials
 
 - [Python Numpy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
