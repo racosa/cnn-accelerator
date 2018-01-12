@@ -95,7 +95,7 @@ int main()
 
 	float input[25];
 	for (unsigned int i = 0; i < 25; i++) {
-		input[i] = 1.1;
+		input[i] = i;
 	}
 
 	float output[9];
