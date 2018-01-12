@@ -1,30 +1,19 @@
-#include "../include/relu.h"
+#include "relu.h"
 
-Relu::Relu(unsigned int height,
-	unsigned int width,
-	unsigned int depth)
-:	height(height),
-	width(width),
-	depth(depth)
-{}
+Relu::Relu(unsigned int input_size, unsigned int input_depth)
+	: input_size(input_size),
+	input_depth(input_depth)
+{
+}
 
-Relu::~Relu() {}
 
-std::array<std::array<std::array <float> > > Relu::relu_layer(std::array<std::vearrayctor<std::array <float> > > input) {
-	std::array<std::array<std::array <float, depth> width> height> array3D;
+Relu::~Relu()
+{
+}
 
-	unsigned int x, y, z;
-
-	for(z = 0; z < depth; z++) {
-		for (y = 0; y < width; y++) {
-			for (x = 0; x < height; x++) {
-				if (input[x][y][z] < 0)
-					array3D[x][y][z] = 0;
-				else
-					array3D[x][y][z] = input[x][y][z];
-			}
-		}
+void Relu::relu_layer(float input[]) {
+	for (unsigned int i = 0; i < input_size*input_size*input_depth; i++) {
+		if (input[i] < 0)
+			input[i] = 0;
 	}
-
-	return array3D;
 }

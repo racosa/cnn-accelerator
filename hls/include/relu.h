@@ -1,20 +1,15 @@
-#ifndef _RELU_HPP_
-#define _RELU_HPP_
-
-#include "ac_fixed.h"
-#include <array>
+#ifndef _RELU_H_
+#define _RELU_H_
 
 class Relu
 {
 private:
-    unsigned int height, width, depth; // x, y, z
-
+	unsigned int input_size;
+	unsigned int input_depth;
 public:
-    Relu(unsigned int height,
-	unsigned int width,
-	unsigned int depth);
-    ~Relu();
-	std::array<std::array<std::array <float, depth> width> height> relu_layer(std::array<std::array<std::array <float, depth> width> height> input);
+	Relu(unsigned int input_size, unsigned int input_depth);
+	~Relu();
+	void relu_layer(float input[]);
 };
 
-#endif /* _RELU_HPP_ */
+#endif /* _RELU_H_ */
