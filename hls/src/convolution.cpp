@@ -30,31 +30,70 @@ Convolution::~Convolution()
 
 void Convolution::conv_layer(float input[], float output[]) {
 
-	unsigned int o_x = 0;
-	unsigned int o_y = 0;
-	
-	for (unsigned int i = 0; i < number_of_kernels; i++){ // kernel
-		/*for (unsigned int o_y = 0; o_y < output_size; o_y++) { // output_height
-			for (unsigned int o_x = 0; o_x < output_size; o_x++) { // output_width*/
-				output[o_x*output_size*number_of_kernels + o_y*number_of_kernels + i] = 0;
-				for (unsigned int j = 0; j < input_depth; j++) { // input and kernel depth
-					for (unsigned int k = 0; k < input_size-kernel_size; k+=stride) { // input height
-						for (unsigned int l = 0; l < input_size-kernel_size; l+=stride) { // input width
-							for (unsigned int y = 0; y < kernel_size; y++) { // kernel height
-								for (unsigned int x = 0; x < kernel_size; x++) { // kernel width
-									// input[l+x][k+y][j]*kernel[x][y][j]
-									output[o_x*output_size*number_of_kernels + o_y*number_of_kernels + i] += input[(l+x)*input_size*input_depth+(k+y)*input_depth+j]*kernel[x*kernel_size*input_depth + y*input_depth + j]+bias[i];
-									//std::cout << output[o_x*output_size*number_of_kernels + o_y*number_of_kernels + i] << std::endl;
-								}
-							//std::cout << "end" << std::endl;
-							}
-						o_x+=1;}
-					o_y+=1;}
-				o_x=0;
-				o_y=0;}
-				if (output[o_x*output_size*number_of_kernels + o_y*number_of_kernels + i] < 0) output[o_x*output_size*number_of_kernels + o_y*number_of_kernels + i] = 0;
-			//}
-		//}
+///// Zero padding /////
+
+/***** VERY QUESTIONABLE DECLARATION *****/
+float pad_input[(input_size+2*zero_padding)*(input_size+2*zero_padding)*input_depth];
+///////////////////////////////////////////
+
+for (unsigned int d = 0; d < input_depth; d++) { // depth
+	for (unsigned int r = 0; r < input_size+2*zero_padding; r++) { // row
+		for (unsigned int c = 0; c < input_size+2*zero_padding; c++) { // column
+			if (r < zero_padding || r > input_size) pad_input[d*(input_size+2*zero_padding)*input_depth + r*(input_size+2*zero_padding) + c] = 0;
+			else if (c < zero_padding || c > input_size) pad_input[d*(input_size+2*zero_padding)*input_depth + r*(input_size+2*zero_padding) + c] = 0;
+			else pad_input[d*(input_size+2*zero_padding)*input_depth + r*(input_size+2*zero_padding) + c] = input[d*input_size*input_depth + (r-zero_padding)*input_size + (c-zero_padding)];
+		}
 	}
+}
+
+std::cout << "zero pad input" << '\n';
+for (unsigned int d = 0; d < input_depth; d++) { // depth
+	for (unsigned int r = 0; r < input_size+2*zero_padding; r++) { // row
+		for (unsigned int c = 0; c < input_size+2*zero_padding; c++) { // column
+			std::cout << pad_input[d*(input_size+2*zero_padding)*input_depth + r*(input_size+2*zero_padding) + c] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+}
+
+///// end of zero padding /////
+
+/* ------------------------------- */
+
+///// Convolution calculation /////
+
+	// output[ouput_size][output_size][number_of_kernels]
+
+	unsigned int o_r = 0; // output row index
+	unsigned int o_c = 0; // output column index
+	unsigned int o_d = 0; // output depth index
+
+	for (unsigned int i = 0; i < number_of_kernels; i++) { // kernel canals
+		for (unsigned int j = 0; j <= input_size+2*zero_padding-kernel_size; j+=stride) { // vertical slide of convolution second
+			for (unsigned int k = 0; k <= input_size+2*zero_padding-kernel_size; k+=stride) { // horizontal slide of convolution first
+				output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
+				/////// begin conv op ////////
+				for (unsigned int l = 0; l < input_depth; l++){ // operation with kernel depth last
+					for (unsigned int m = 0; m < kernel_size; m++) { // operation with kernel height second
+						for (unsigned int n = 0; n < kernel_size; n++) { // operation with kernel width first
+							output[o_d*output_size*number_of_kernels + o_r*output_size + o_c] += pad_input[l*(input_size+2*zero_padding)*input_depth + (j+m)*(input_size+2*zero_padding) + (k+n)]*kernel[l*kernel_size*input_depth + m*kernel_size + n];
+						}
+					}
+					output[o_d*output_size*number_of_kernels + o_r*output_size + o_c] += bias[i]; // adding bias
+					// RELU
+					if (output[o_d*output_size*output_size + o_r*output_size + o_c] < 0) output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
+				}
+				////// end of conv op ///////
+				o_c+=1;
+			}
+			o_c = 0;
+			o_r+=1;
+		}
+		o_r = 0;
+		o_d+=1;
+	}
+
+///// end of calculation /////
 
 }
