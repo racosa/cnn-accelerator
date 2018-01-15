@@ -119,7 +119,7 @@ int main()
 		std::cout << std::endl;
 	}*/
 
-	// maxpool test
+	/*// maxpool test
 	float input[36];
 	for (unsigned int i = 0; i < 36; i++) {
 		input[i] = (float)i;
@@ -152,7 +152,7 @@ int main()
 			std::cout << output[y * 3 + x] << " ";
 		}
 		std::cout << std::endl;
-	}
+	}*/
 
 	return 0;
 }

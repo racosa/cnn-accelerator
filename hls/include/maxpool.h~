@@ -15,8 +15,7 @@ public:
   Maxpool(unsigned int maxpool_size,
     unsigned int maxpool_stride,
     unsigned int input_size,
-    unsigned int input_depth,
-    unsigned int zero_padding);
+    unsigned int input_depth);
   ~Maxpool();
   void maxpool_layer(float input[], float output[]);
 
