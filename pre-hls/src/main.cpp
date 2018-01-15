@@ -1,12 +1,14 @@
 #include <iostream>
-#include "cifar10.h"
+#include <iomanip>
+#include "../include/cifar10.h"
+#include "../include/kernels.h"
 
 int main() {
-    char *images;
-    if(read_cifar10(&images)) return 1; // Error: Batch file not found.
-          
-    int index = 0;
-    print_image(images, index);
-  
+    float images[100*1728];
+    float labels[100];
+    
+    load_file("100-normalized-images.out", images);
+    load_file("100-labels.out", labels);
+    
     return 0;
 }
