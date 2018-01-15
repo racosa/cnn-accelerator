@@ -4,13 +4,13 @@ void reshape(float input[], float output[]){
 
 	for (unsigned int i = 0; i < 3; i++) { // height last
 		for (unsigned int j = 0; j < 3; j++) { // width second
-			for (unsigned int k = 0; k < 20; k++) { // canal last
+			for (unsigned int k = 0; k < 20; k++) { // canal first
 				output[output_length] = input[k*3*3 + i*3 + j];
 				output_length++;
 			}
 		}
 	}
-	
+
 }
 
 
