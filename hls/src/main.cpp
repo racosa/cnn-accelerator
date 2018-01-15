@@ -67,7 +67,7 @@ int main()
 	   }*/
 
 
-	/*// conv test
+	// conv test
 	float kernel[3][3] = {{0, 0, 0},
 			      {0, 1, 0},
 			      {0, 0, 0}};
@@ -78,7 +78,7 @@ int main()
 	unsigned int stride = 1;
 	unsigned int input_depth = 1;
 	unsigned int zero_padding = 1;
-	float bias[1] = {30};
+	float bias[1] = {0};
 
 	std::cout << "kernel flat" << std::endl;
 	for (unsigned int y = 0; y < kernel_size; y++) {
@@ -93,7 +93,7 @@ int main()
 
 	float input[25];
 	for (unsigned int i = 0; i < 25; i++) {
-		input[i] = 1.1;
+		input[i] = ((float)rand()) / RAND_MAX * 100.0 - 50.0;;
 	}
 
 	std::cout << "input" << std::endl;
@@ -117,9 +117,9 @@ int main()
 			std::cout << output[y * 5 + x] << " ";
 		}
 		std::cout << std::endl;
-	}*/
+	}
 
-	// maxpool test
+	/*// maxpool test
 	float input[25];
 	for (unsigned int i = 0; i < 25; i++) {
 		input[i] = (float)i;
@@ -146,7 +146,7 @@ int main()
 			std::cout << output[y * 2 + x] << " ";
 		}
 		std::cout << std::endl;
-	}
+	}*/
 
 	return 0;
 }

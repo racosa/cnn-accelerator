@@ -24,11 +24,11 @@ void Maxpool::maxpool_layer(float input[], float output[]) {
   for (unsigned int i = 0; i < input_depth; i++) { // depth translation on input
     for (unsigned int j = 0; j <= input_size-maxpool_size; j+= maxpool_stride) { // height translation on input
       for (unsigned int k = 0; k <= input_size-maxpool_size; k+=maxpool_stride) { // width translation on input
-        output[o_d*output_size*input_depth + o_r*output_size + o_c] = 0;
+        output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
         ///// Maxpooling /////
         for (unsigned int l = 0; l < maxpool_size; l++) { // maxpool height
           for (unsigned int m = 0; m < maxpool_size; m++) { // maxpool width
-            if (output[o_d*output_size*input_depth + o_r*output_size + o_c] < input[i*input_size*input_depth + (j+l)*input_size + (k+m)]) output[o_d*output_size*input_depth + o_r*output_size + o_c] = input[i*input_size*input_depth + (j+l)*input_size + (k+m)];
+            if (output[o_d*output_size*output_size + o_r*output_size + o_c] < input[i*input_size*input_size + (j+l)*input_size + (k+m)]) output[o_d*output_size*output_size + o_r*output_size + o_c] = input[i*input_size*input_size + (j+l)*input_size + (k+m)];
           }
         }
         ///// end of maxpooling region calc /////
