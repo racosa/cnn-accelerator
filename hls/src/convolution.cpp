@@ -77,10 +77,10 @@ for (unsigned int d = 0; d < input_depth; d++) { // depth
 				for (unsigned int l = 0; l < input_depth; l++){ // operation with kernel depth last
 					for (unsigned int m = 0; m < kernel_size; m++) { // operation with kernel height second
 						for (unsigned int n = 0; n < kernel_size; n++) { // operation with kernel width first
-							output[o_d*output_size*number_of_kernels + o_r*output_size + o_c] += pad_input[l*(input_size+2*zero_padding)*input_depth + (j+m)*(input_size+2*zero_padding) + (k+n)]*kernel[l*kernel_size*input_depth + m*kernel_size + n];
+							output[o_d*output_size*output_size + o_r*output_size + o_c] += pad_input[l*(input_size+2*zero_padding)*(input_size+2*zero_padding) + (j+m)*(input_size+2*zero_padding) + (k+n)]*kernel[l*kernel_size*kernel_size + m*kernel_size + n];
 						}
 					}
-					output[o_d*output_size*number_of_kernels + o_r*output_size + o_c] += bias[i]; // adding bias
+					output[o_d*output_size*output_size + o_r*output_size + o_c] += bias[i]; // adding bias
 					// RELU
 					if (output[o_d*output_size*output_size + o_r*output_size + o_c] < 0) output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
 				}
@@ -90,6 +90,7 @@ for (unsigned int d = 0; d < input_depth; d++) { // depth
 			o_c = 0;
 			o_r+=1;
 		}
+		o_c = 0;
 		o_r = 0;
 		o_d+=1;
 	}
