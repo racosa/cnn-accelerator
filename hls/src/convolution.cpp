@@ -64,7 +64,7 @@ void Convolution::conv_layer(float input[], float output[]) {
 
 ///// Convolution calculation /////
 
-	// output[ouput_size][output_size][number_of_kernels]
+	// output[number_of_kernels][output_size][output_size]
 
 	unsigned int o_r = 0; // output row index
 	unsigned int o_c = 0; // output column index

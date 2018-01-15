@@ -4,13 +4,6 @@
 #include "maxpool.h"
 #include "fc.h"
 
-/*
-
-        Array format : HxWxC (Height x Width x Depth) => array[r][c][d] r: row, c: column, d:depth
-        3D to 1D: array[r][c][d] => array[d*W*C + r*W + c]
-
- */
-
 int main()
 {
 	//std::cout << "Hello world!" << std::endl;
@@ -68,7 +61,7 @@ int main()
 	   }*/
 
 
-	// conv test
+	/*// conv test
 	float kernel[27+27+27] = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
 													0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0,
 													0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0};
@@ -79,7 +72,7 @@ int main()
 	unsigned int stride = 1;
 	unsigned int input_depth = 3;
 	unsigned int zero_padding = 1;
-	float bias[3] = {1, 1 ,1};
+	float bias[3] = {1, 1 ,1};*/
 
 	/*std::cout << "kernel flat" << std::endl;
 	for (unsigned int y = 0; y < kernel_size; y++) {
@@ -92,21 +85,12 @@ int main()
 	std::cout << std::endl;*/
 
 
-	float input[5*5*3];
+	//float input[5*5*3];
 	/*for (unsigned int i = 0; i < 5*5*3; i++) {
 		input[i] = (float)i;
 	}*/
-	int i = 0;
-	for (unsigned int z = 0; z < input_depth; z++) {
-		for (unsigned int y = 0; y < input_size; y++) {
-			for (unsigned int x = 0; x < input_size; x++) {
-				input[z*input_size*input_size + y*input_size + x] = (float)i;
-				i++;
-			}
-		}
-	}
 
-	std::cout << "input" << std::endl;
+	/*std::cout << "input" << std::endl;
 	for (unsigned int z = 0; z < input_depth; z++) {
 		for (unsigned int y = 0; y < input_size; y++) {
 			for (unsigned int x = 0; x < input_size; x++) {
@@ -121,7 +105,7 @@ int main()
 
 	Convolution conv(kernel, kernel_size, number_of_kernels, input_size, stride, input_depth, zero_padding, bias);
 
-	conv.conv_layer(input, output);
+	conv.conv_layer(input, output);*/
 
 	/*std::cout << "output" << std::endl;
 	for (unsigned int y = 0; y < 5; y++) {
@@ -131,7 +115,7 @@ int main()
 		std::cout << std::endl;
 	}*/
 
-	std::cout << "output" << std::endl;
+	/*std::cout << "output" << std::endl;
 	for (unsigned int z = 0; z < 3; z++) {
 		for (unsigned int y = 0; y < 5; y++) {
 			for (unsigned int x = 0; x < 5; x++) {
@@ -140,7 +124,7 @@ int main()
 			std::cout << std::endl;
 		}
 		std::cout << std::endl;
-	}
+	}*/
 
 	/*// maxpool test
 	float input[36];
@@ -177,7 +161,7 @@ int main()
 		std::cout << std::endl;
 	}*/
 
-	/*// reshape test
+	// reshape test
 
 	int input[20][3][3];
 
@@ -225,13 +209,16 @@ int main()
 
 	reshape(flat_input, r_output);
 
-	for (unsigned int i = 0; i < 180; i++) std::cout << r_output[i] << " ";
-	std::cout << std::endl;
+	// reshape output
+	int sum_output = 0;
+	for (unsigned int i = 0; i < 180; i++) { std::cout << r_output[i] << " "; sum_output+=r_output[i]; }
+	std::cout << std::endl << std::endl;
+	std::cout << sum_output << std::endl << std::endl;
 
 	float matrix[1800];
 	for (unsigned int r = 0; r < 180; r++) {
 		for (unsigned int c = 0; c < 10; c++) {
-			matrix[r*10+c] = (float)r*10+c;
+			matrix[r*10+c] = 1;
 		}
 	}
 
@@ -249,7 +236,7 @@ int main()
 	fully_connected(r_output, matrix, fc_output, bias);
 
 	for (unsigned int i = 0; i < 10; i++) std::cout << fc_output[i] << " ";
-	std::cout << std::endl;*/
+	std::cout << std::endl;
 
 	return 0;
 }
