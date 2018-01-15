@@ -81,10 +81,10 @@ void Convolution::conv_layer(float input[], float output[]) {
 							output[o_d*output_size*output_size + o_r*output_size + o_c] += pad_input[l*(input_size+2*zero_padding)*(input_size+2*zero_padding) + (j+m)*(input_size+2*zero_padding) + (k+n)]*kernel[l*kernel_size*kernel_size + m*kernel_size + n];
 						}
 					}
-					output[o_d*output_size*output_size + o_r*output_size + o_c] += bias[i]; // adding bias
-					// RELU
-					if (output[o_d*output_size*output_size + o_r*output_size + o_c] < 0) output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
 				}
+				output[o_d*output_size*output_size + o_r*output_size + o_c] += bias[i]; // adding bias
+				// RELU
+				if (output[o_d*output_size*output_size + o_r*output_size + o_c] < 0) output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
 				////// end of conv op ///////
 				o_c+=1;
 			}

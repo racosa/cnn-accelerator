@@ -39,8 +39,8 @@ void Convolution::conv_layer(float input[], float output[]) {
 	for (unsigned int d = 0; d < input_depth; d++) { // depth
 		for (unsigned int r = 0; r < input_size+2*zero_padding; r++) { // row
 			for (unsigned int c = 0; c < input_size+2*zero_padding; c++) { // column
-				if (r < zero_padding || r > input_size+2*zero_padding) pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] = 0;
-				else if (c < zero_padding || c > input_size+2*zero_padding) pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] = 0;
+				if (r < zero_padding || r >= input_size+zero_padding) pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] = 0;
+				else if (c < zero_padding || c >= input_size+zero_padding) pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] = 0;
 				else pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] = input[d*input_size*input_size + (r-zero_padding)*input_size + (c-zero_padding)];
 			}
 		}

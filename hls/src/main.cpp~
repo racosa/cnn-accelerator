@@ -67,20 +67,18 @@ int main()
 	   }*/
 
 
-	/*// conv test
-	float kernel[3][3] = {{0, 0, 0},
-			      {0, 1, 0},
-			      {0, 0, 0}};
-	float kernel_flat[9];
+	// conv test
+	float kernel[27] = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0};
+	//float kernel_flat[9];
 	unsigned int kernel_size = 3;
 	unsigned int number_of_kernels = 1;
-	unsigned int input_size = 5;
+	unsigned int input_size = 6;
 	unsigned int stride = 1;
-	unsigned int input_depth = 1;
-	unsigned int zero_padding = 4;
+	unsigned int input_depth = 3;
+	unsigned int zero_padding = 1;
 	float bias[1] = {0};
 
-	std::cout << "kernel flat" << std::endl;
+	/*std::cout << "kernel flat" << std::endl;
 	for (unsigned int y = 0; y < kernel_size; y++) {
 		for (unsigned int x = 0; x < kernel_size; x++) {
 			kernel_flat[y * kernel_size + x] = kernel[y][x];
@@ -88,38 +86,38 @@ int main()
 		}
 		std::cout << std::endl;
 	}
-	std::cout << std::endl;
+	std::cout << std::endl;*/
 
 
-	float input[25];
-	for (unsigned int i = 0; i < 25; i++) {
-		input[i] = ((float)rand()) / RAND_MAX * 100.0 - 50.0;;
+	float input[36*3];
+	for (unsigned int i = 0; i < 36*3; i++) {
+		input[i] = (float)i;
 	}
 
-	std::cout << "input" << std::endl;
+	/*std::cout << "input" << std::endl;
 	for (unsigned int y = 0; y < input_size; y++) {
 		for (unsigned int x = 0; x < input_size; x++) {
 			std::cout << input[y * input_size + x] << " ";
 		}
 		std::cout << std::endl;
 	}
-	std::cout << std::endl;
+	std::cout << std::endl;*/
 
-	float output[121];
+	float output[36];
 
-	Convolution conv(kernel_flat, kernel_size, number_of_kernels, input_size, stride, input_depth, zero_padding, bias);
+	Convolution conv(kernel, kernel_size, number_of_kernels, input_size, stride, input_depth, zero_padding, bias);
 
 	conv.conv_layer(input, output);
 
 	std::cout << "output" << std::endl;
-	for (unsigned int y = 0; y < 11; y++) {
-		for (unsigned int x = 0; x < 11; x++) {
-			std::cout << output[y * 11 + x] << " ";
+	for (unsigned int y = 0; y < 6; y++) {
+		for (unsigned int x = 0; x < 6; x++) {
+			std::cout << output[y * 6 + x] << " ";
 		}
 		std::cout << std::endl;
-	}*/
+	}
 
-	// maxpool test
+	/*// maxpool test
 	float input[36];
 	for (unsigned int i = 0; i < 36; i++) {
 		input[i] = (float)i;
@@ -134,7 +132,7 @@ int main()
 	}
 	std::cout << std::endl;
 
-	float output[9];
+	float output[16];
 	
 	unsigned int maxpool_size = 3;
   unsigned int maxpool_stride = 2;
@@ -147,12 +145,12 @@ int main()
 	maxpool.maxpool_layer(input, output);
 
 	std::cout << "output" << std::endl;
-	for (unsigned int y = 0; y < 3; y++) {
-		for (unsigned int x = 0; x < 3; x++) {
-			std::cout << output[y * 3 + x] << " ";
+	for (unsigned int y = 0; y < 4; y++) {
+		for (unsigned int x = 0; x < 4; x++) {
+			std::cout << output[y * 4 + x] << " ";
 		}
 		std::cout << std::endl;
-	}
+	}*/
 
 	return 0;
 }
