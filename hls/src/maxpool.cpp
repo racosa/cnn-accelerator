@@ -30,12 +30,8 @@ void Maxpool::maxpool_layer(float input[], float output[]) {
 			for (unsigned int k = 0; k < input_size+zero_padding; k++) {
 				if (j >= input_size || k >= input_size) pad_input[i*(input_size+zero_padding)*(input_size+zero_padding) + j*(input_size+zero_padding) + k] = 0;
 				else pad_input[i*(input_size+zero_padding)*(input_size+zero_padding) + j*(input_size+zero_padding) + k] = input[i*input_size*input_size + j*input_size + k];
-				
-				std::cout << input[i*input_size*input_size + j*input_size + k] << " ";
 			}
-			std::cout << std::endl;
 		}
-		std::cout << std::endl;
 	}
 	
 	// FOR DEBUG PURPOSE //

@@ -134,22 +134,22 @@ int main()
 	}
 	std::cout << std::endl;
 
-	float output[9];
+	float output[16];
 	
 	unsigned int maxpool_size = 3;
   unsigned int maxpool_stride = 2;
-  unsigned int input_size = 5;
+  unsigned int input_size = 6;
   unsigned int input_depth = 1;
-	unsigned int zero_padding = 1;
+	unsigned int zero_padding = 3;
 
 	Maxpool maxpool(maxpool_size, maxpool_stride, input_size, input_depth, zero_padding);
 
 	maxpool.maxpool_layer(input, output);
 
 	std::cout << "output" << std::endl;
-	for (unsigned int y = 0; y < 3; y++) {
-		for (unsigned int x = 0; x < 3; x++) {
-			std::cout << output[y * 3 + x] << " ";
+	for (unsigned int y = 0; y < 4; y++) {
+		for (unsigned int x = 0; x < 4; x++) {
+			std::cout << output[y * 4 + x] << " ";
 		}
 		std::cout << std::endl;
 	}

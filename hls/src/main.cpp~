@@ -119,7 +119,7 @@ int main()
 		std::cout << std::endl;
 	}*/
 
-	/*// maxpool test
+	// maxpool test
 	float input[36];
 	for (unsigned int i = 0; i < 36; i++) {
 		input[i] = (float)i;
@@ -138,9 +138,9 @@ int main()
 	
 	unsigned int maxpool_size = 3;
   unsigned int maxpool_stride = 2;
-  unsigned int input_size = 5;
+  unsigned int input_size = 6;
   unsigned int input_depth = 1;
-	unsigned int zero_padding = 1;
+	unsigned int zero_padding = 3;
 
 	Maxpool maxpool(maxpool_size, maxpool_stride, input_size, input_depth, zero_padding);
 
@@ -152,7 +152,7 @@ int main()
 			std::cout << output[y * 3 + x] << " ";
 		}
 		std::cout << std::endl;
-	}*/
+	}
 
 	return 0;
 }
