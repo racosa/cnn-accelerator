@@ -90,6 +90,7 @@ for (unsigned int d = 0; d < input_depth; d++) { // depth
 			o_c = 0;
 			o_r+=1;
 		}
+		o_c = 0;
 		o_r = 0;
 		o_d+=1;
 	}

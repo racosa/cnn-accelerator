@@ -1,6 +1,7 @@
 #include <iostream>
 #include "relu.h"
 #include "convolution.h"
+#include "maxpool.h"
 
 /*
 
@@ -65,6 +66,8 @@ int main()
 	        std::cout << std::endl;
 	   }*/
 
+
+	/*// conv test
 	float kernel[3][3] = {{0, 0, 0},
 			      {0, 1, 0},
 			      {0, 0, 0}};
@@ -112,6 +115,35 @@ int main()
 	for (unsigned int y = 0; y < 5; y++) {
 		for (unsigned int x = 0; x < 5; x++) {
 			std::cout << output[y * 5 + x] << " ";
+		}
+		std::cout << std::endl;
+	}*/
+
+	// maxpool test
+	float input[25];
+	for (unsigned int i = 0; i < 25; i++) {
+		input[i] = (float)i;
+	}
+
+	std::cout << "input" << std::endl;
+	for (unsigned int y = 0; y < 5; y++) {
+		for (unsigned int x = 0; x < 5; x++) {
+			std::cout << input[y * 5 + x] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+
+	float output[4];
+
+	Maxpool maxpool(3, 2, 5, 1);
+
+	maxpool.maxpool_layer(input, output);
+
+	std::cout << "output" << std::endl;
+	for (unsigned int y = 0; y < 2; y++) {
+		for (unsigned int x = 0; x < 2; x++) {
+			std::cout << output[y * 2 + x] << " ";
 		}
 		std::cout << std::endl;
 	}
