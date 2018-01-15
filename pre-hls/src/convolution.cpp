@@ -78,7 +78,7 @@ void Convolution::conv_layer(float input[], float output[]) {
 				for (int l = 0; l < input_depth; l++){ // operation with kernel depth last
 					for (int m = 0; m < kernel_size; m++) { // operation with kernel height second
 						for (int n = 0; n < kernel_size; n++) { // operation with kernel width first
-							output[o_d*output_size*output_size + o_r*output_size + o_c] += pad_input[l*(input_size+2*zero_padding)*(input_size+2*zero_padding) + (j+m)*(input_size+2*zero_padding) + (k+n)]*kernel[l*kernel_size*kernel_size + m*kernel_size + n];
+							output[o_d*output_size*output_size + o_r*output_size + o_c] += pad_input[l*(input_size+2*zero_padding)*(input_size+2*zero_padding) + (j+m)*(input_size+2*zero_padding) + (k+n)]*kernel[i*kernel_size*kernel_size*input_depth + l*kernel_size*kernel_size + m*kernel_size + n];
 						}
 				 	}
 				} 
