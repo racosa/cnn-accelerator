@@ -68,16 +68,18 @@ int main()
 	   }*/
 
 
-	/*// conv test
-	float kernel[27] = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0};
+	// conv test
+	float kernel[27+27+27] = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+													0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0,
+													0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0};
 	//float kernel_flat[9];
 	unsigned int kernel_size = 3;
-	unsigned int number_of_kernels = 1;
-	unsigned int input_size = 6;
+	unsigned int number_of_kernels = 3;
+	unsigned int input_size = 5;
 	unsigned int stride = 1;
 	unsigned int input_depth = 3;
 	unsigned int zero_padding = 1;
-	float bias[1] = {1};*/
+	float bias[3] = {1, 1 ,1};
 
 	/*std::cout << "kernel flat" << std::endl;
 	for (unsigned int y = 0; y < kernel_size; y++) {
@@ -90,33 +92,55 @@ int main()
 	std::cout << std::endl;*/
 
 
-	/*float input[36*3];
-	for (unsigned int i = 0; i < 36*3; i++) {
+	float input[5*5*3];
+	/*for (unsigned int i = 0; i < 5*5*3; i++) {
 		input[i] = (float)i;
 	}*/
+	int i = 0;
+	for (unsigned int z = 0; z < input_depth; z++) {
+		for (unsigned int y = 0; y < input_size; y++) {
+			for (unsigned int x = 0; x < input_size; x++) {
+				input[z*input_size*input_size + y*input_size + x] = (float)i;
+				i++;
+			}
+		}
+	}
 
-	/*std::cout << "input" << std::endl;
-	for (unsigned int y = 0; y < input_size; y++) {
-		for (unsigned int x = 0; x < input_size; x++) {
-			std::cout << input[y * input_size + x] << " ";
+	std::cout << "input" << std::endl;
+	for (unsigned int z = 0; z < input_depth; z++) {
+		for (unsigned int y = 0; y < input_size; y++) {
+			for (unsigned int x = 0; x < input_size; x++) {
+				std::cout << input[z*input_size*input_size + y*input_size + x] << " ";
+			}
+			std::cout << std::endl;
 		}
 		std::cout << std::endl;
 	}
-	std::cout << std::endl;*/
 
-	/*float output[36];
+	float output[5*5*3];
 
 	Convolution conv(kernel, kernel_size, number_of_kernels, input_size, stride, input_depth, zero_padding, bias);
 
 	conv.conv_layer(input, output);
 
-	std::cout << "output" << std::endl;
-	for (unsigned int y = 0; y < 6; y++) {
-		for (unsigned int x = 0; x < 6; x++) {
-			std::cout << output[y * 6 + x] << " ";
+	/*std::cout << "output" << std::endl;
+	for (unsigned int y = 0; y < 5; y++) {
+		for (unsigned int x = 0; x < 5; x++) {
+			std::cout << output[y * 5 + x] << " ";
 		}
 		std::cout << std::endl;
 	}*/
+
+	std::cout << "output" << std::endl;
+	for (unsigned int z = 0; z < 3; z++) {
+		for (unsigned int y = 0; y < 5; y++) {
+			for (unsigned int x = 0; x < 5; x++) {
+				std::cout << output[z*5*5 + y*5 + x] << " ";
+			}
+			std::cout << std::endl;
+		}
+		std::cout << std::endl;
+	}
 
 	/*// maxpool test
 	float input[36];
@@ -134,7 +158,7 @@ int main()
 	std::cout << std::endl;
 
 	float output[16];
-	
+
 	unsigned int maxpool_size = 3;
   unsigned int maxpool_stride = 2;
   unsigned int input_size = 6;
@@ -152,11 +176,11 @@ int main()
 		}
 		std::cout << std::endl;
 	}*/
-	
-	// reshape test
-	
+
+	/*// reshape test
+
 	int input[20][3][3];
-	
+
 	for (unsigned int d = 0; d < 20; d++) {
 		for (unsigned int r = 0; r < 3; r++) {
 			for (unsigned int c = 0; c < 3; c++) {
@@ -164,7 +188,7 @@ int main()
 			}
 		}
 	}
-	
+
 	std::cout << "input" << std::endl;
 	for (unsigned int d = 0; d < 20; d++) {
 		for (unsigned int r = 0; r < 3; r++) {
@@ -175,9 +199,9 @@ int main()
 		}
 		std::cout << std::endl;
 	}
-	
+
 	float flat_input[20*3*3];
-	
+
 	for (unsigned int d = 0; d < 20; d++) {
 		for (unsigned int r = 0; r < 3; r++) {
 			for (unsigned int c = 0; c < 3; c++) {
@@ -185,7 +209,7 @@ int main()
 			}
 		}
 	}
-	
+
 	std::cout << "flat_input" << std::endl;
 	for (unsigned int d = 0; d < 20; d++) {
 		for (unsigned int r = 0; r < 3; r++) {
@@ -196,36 +220,36 @@ int main()
 		}
 		std::cout << std::endl;
 	}
-	
+
 	float r_output[180];
-	
+
 	reshape(flat_input, r_output);
-	
+
 	for (unsigned int i = 0; i < 180; i++) std::cout << r_output[i] << " ";
 	std::cout << std::endl;
-	
+
 	float matrix[1800];
 	for (unsigned int r = 0; r < 180; r++) {
 		for (unsigned int c = 0; c < 10; c++) {
 			matrix[r*10+c] = (float)r*10+c;
 		}
 	}
-	
+
 	for (unsigned int r = 0; r < 180; r++) {
 		for (unsigned int c = 0; c < 10; c++) {
 			std::cout << matrix[r*10+c] << " ";
 		}
 		std::cout << std::endl;
 	}
-	
+
 	float bias[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-	
+
 	float fc_output[10];
-	
+
 	fully_connected(r_output, matrix, fc_output, bias);
-	
+
 	for (unsigned int i = 0; i < 10; i++) std::cout << fc_output[i] << " ";
-	std::cout << std::endl;
+	std::cout << std::endl;*/
 
 	return 0;
 }
