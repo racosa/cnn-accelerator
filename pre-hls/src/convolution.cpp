@@ -1,26 +1,17 @@
 #include "convolution.h"
-#include <iostream>
 
 Convolution::Convolution(const float *kernel,
-                         const float* bias,
-	int kernel_size,
-	int number_of_kernels,
-	int input_size,
-	int stride,
-	int input_depth,
-	int zero_padding)
+  const float* bias,
+	const int number_of_kernels,
+	const int input_size,
+	const int input_depth)
 :	kernel(kernel),
-        bias(bias),
-	kernel_size(kernel_size),
+  bias(bias),
 	number_of_kernels(number_of_kernels),
 	input_size(input_size),
-	stride(stride),
-	input_depth(input_depth),
-	zero_padding(zero_padding)
+	input_depth(input_depth)
 {
-   	output_size = ((input_size - kernel_size + 2 * zero_padding) / stride) + 1;
-        std::cout << "output_size: " << output_size << "\n";
-
+   	output_size = ((input_size - KERNEL_SIZE + 2 * ZERO_PADDING) / STRIDE) + 1;
 }
 
 Convolution::~Convolution()
@@ -32,56 +23,43 @@ void Convolution::conv_layer(float input[], float output[]) {
 ///// Zero padding /////
 
 /***** VERY QUESTIONABLE DECLARATION *****/
-	float pad_input[(input_size+2*zero_padding)*(input_size+2*zero_padding)*input_depth];
+	float pad_input[(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING)*input_depth];
 ///////////////////////////////////////////
 
-	for ( int d = 0; d < input_depth; d++) { // depth
-		for ( int r = 0; r < input_size+2*zero_padding; r++) { // row
-			for ( int c = 0; c < input_size+2*zero_padding; c++) { // column
-				if (r < zero_padding || r >= input_size+zero_padding) pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] = 0;
-				else if (c < zero_padding || c >= input_size+zero_padding) pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] = 0;
-				else pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] = input[d*input_size*input_size + (r-zero_padding)*input_size + (c-zero_padding)];
+	for (int d = 0; d < input_depth; d++) { // depth
+		for (int r = 0; r < input_size+2*ZERO_PADDING; r++) { // row
+			for (int c = 0; c < input_size+2*ZERO_PADDING; c++) { // column
+				if (r < ZERO_PADDING || r >= input_size+ZERO_PADDING) pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = 0;
+				else if (c < ZERO_PADDING || c >= input_size+ZERO_PADDING) pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = 0;
+				else pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = input[d*input_size*input_size + (r-ZERO_PADDING)*input_size + (c-ZERO_PADDING)];
 			}
 		}
 	}
-        /*
-	// FOR DEBUG PURPOSE //
-	std::cout << "zero pad input" << '\n';
-	for ( int d = 0; d < input_depth; d++) { // depth
-		for ( int r = 0; r < input_size+2*zero_padding; r++) { // row
-			for ( int c = 0; c < input_size+2*zero_padding; c++) { // column
-				std::cout << pad_input[d*(input_size+2*zero_padding)*(input_size+2*zero_padding) + r*(input_size+2*zero_padding) + c] << " ";
-			}
-			std::cout << std::endl;
-		}
-		std::cout << std::endl;
-	}
-        */
-	///////////////////////
+
 ///// end of zero padding /////
 
 /* ------------------------------- */
 
 ///// Convolution calculation /////
 
-	// output[ouput_size][output_size][number_of_kernels]
+	// output[number_of_kernels][output_size][output_size]
 
-	int o_r = 0; // output row index
-	int o_c = 0; // output column index
-	int o_d = 0; // output depth index
+	unsigned int o_r = 0; // output row index
+	unsigned int o_c = 0; // output column index
+	unsigned int o_d = 0; // output depth index
 
 	for (int i = 0; i < number_of_kernels; i++) { // kernel canals
-		for (int j = 0; j <= input_size+2*zero_padding-kernel_size; j+=stride) { // vertical slide of convolution second
-			for (int k = 0; k <= input_size+2*zero_padding-kernel_size; k+=stride) { // horizontal slide of convolution first
+		for (int j = 0; j <= input_size+2*ZERO_PADDING-KERNEL_SIZE; j+=STRIDE) { // vertical slide of convolution second
+			for (int k = 0; k <= input_size+2*ZERO_PADDING-KERNEL_SIZE; k+=STRIDE) { // horizontal slide of convolution first
 				output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
 				/////// begin conv op ////////
 				for (int l = 0; l < input_depth; l++){ // operation with kernel depth last
-					for (int m = 0; m < kernel_size; m++) { // operation with kernel height second
-						for (int n = 0; n < kernel_size; n++) { // operation with kernel width first
-							output[o_d*output_size*output_size + o_r*output_size + o_c] += pad_input[l*(input_size+2*zero_padding)*(input_size+2*zero_padding) + (j+m)*(input_size+2*zero_padding) + (k+n)]*kernel[i*kernel_size*kernel_size*input_depth + l*kernel_size*kernel_size + m*kernel_size + n];
+					for (int m = 0; m < KERNEL_SIZE; m++) { // operation with kernel height second
+						for (int n = 0; n < KERNEL_SIZE; n++) { // operation with kernel width first
+							output[o_d*output_size*output_size + o_r*output_size + o_c] += pad_input[l*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + (j+m)*(input_size+2*ZERO_PADDING) + (k+n)]*kernel[i*KERNEL_SIZE*KERNEL_SIZE*input_depth + l*KERNEL_SIZE*KERNEL_SIZE + m*KERNEL_SIZE + n];
 						}
 				 	}
-				} 
+				}
 				output[o_d*output_size*output_size + o_r*output_size + o_c] += bias[i]; // adding bias
 				// RELU
 				if (output[o_d*output_size*output_size + o_r*output_size + o_c] < 0) output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
