@@ -5,8 +5,9 @@
 #include <iostream>
 #include <stdint.h>
 #include <numeric> 
+#include "../lib/ac_fixed.h"
 
-int load_file(const char *file_name, float *buffer);
+int load_file(const char *file_name, ac_fixed<16,3,true> *buffer);
 int read_cifar10(uint8_t *images, uint8_t *labels);
 int print_image(double *images, uint8_t *labels, int index, bool normalized);
 

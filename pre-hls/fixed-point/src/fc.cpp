@@ -1,4 +1,6 @@
-void reshape(float input[], float output[]){
+#include "../include/fc.h"
+
+void reshape(ac_fixed<16,3,true> input[], ac_fixed<16,3,true> output[]){
 
 	int output_length = 0;
 
@@ -14,7 +16,7 @@ void reshape(float input[], float output[]){
 }
 
 
-void fully_connected(float input[], const float matrix[], float output[], const float bias[]){
+void fully_connected(ac_fixed<16,3,true> input[], const ac_fixed<16,3,true> matrix[], ac_fixed<16,3,true> output[], const ac_fixed<16,3,true> bias[]){
 
 	for (unsigned int i = 0; i < 10; i++) {
 		output[i] = 0;

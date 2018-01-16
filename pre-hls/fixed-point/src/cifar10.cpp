@@ -1,12 +1,12 @@
 #include "../include/cifar10.h"
 
-int load_file(const char *file_name, float *buffer) {
+int load_file(const char *file_name, ac_fixed<16,3,true> *buffer) {
     std::ifstream file(file_name);
     int i = 0;
     if (file.good()) {
         float item = 0;
         while(file >> item) {
-            buffer[i] = item;
+            buffer[i] = (ac_fixed<16,3,true>) item;
             i++;
         }
         file.close();

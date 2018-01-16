@@ -1,10 +1,10 @@
 #include "convolution.h"
-
-Convolution::Convolution(const float *kernel,
-  const float* bias,
-	const int number_of_kernels,
-	const int input_size,
-	const int input_depth)
+#define A 3
+Convolution::Convolution(const ac_fixed<16,3,true> *kernel,
+                         const ac_fixed<16,3,true> *bias,
+                         const int number_of_kernels,
+                         const int input_size,
+                         const int input_depth)
 :	kernel(kernel),
   bias(bias),
 	number_of_kernels(number_of_kernels),
@@ -18,12 +18,12 @@ Convolution::~Convolution()
 {
 }
 
-void Convolution::conv_layer(float input[], float output[]) {
+void Convolution::conv_layer(ac_fixed<16,3,true> input[], ac_fixed<16,3,true> output[]) {
 
 ///// Zero padding /////
 
 /***** VERY QUESTIONABLE DECLARATION *****/
-	float pad_input[(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING)*input_depth];
+	ac_fixed<16,3,true> pad_input[(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING)*input_depth];
 ///////////////////////////////////////////
 
 	for (int d = 0; d < input_depth; d++) { // depth

@@ -10,11 +10,11 @@ Maxpool::Maxpool(const int input_size, const int input_depth)
 Maxpool::~Maxpool()
 {}
 
-void Maxpool::maxpool_layer(float input[], float output[]) {
+void Maxpool::maxpool_layer(ac_fixed<16,3,true> input[], ac_fixed<16,3,true> output[]) {
 
 ///// ZERO PADDING /////
 	/// VERY QUESTIONABLE DECLARATION ///
-	float pad_input[(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING)*input_depth];
+	ac_fixed<16,3,true> pad_input[(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING)*input_depth];
 	/////////////////////////////////////
 
 	for (int i = 0; i < input_depth; i++) {
