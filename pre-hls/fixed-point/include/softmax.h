@@ -4,4 +4,4 @@
 #include <iostream>
 #include "../lib/ac_fixed.h"
 
-float softmax(ac_fixed<16,3,true> *input);
+float softmax(double *input);

@@ -3,7 +3,7 @@
 
 #include "../lib/ac_fixed.h"
 
-#define FIXP_IMAGES_W 16
+#define FIXP_IMAGES_W 32
 #define FIXP_IMAGES_I 5
 
 #define FIXP_LABELS_W 4

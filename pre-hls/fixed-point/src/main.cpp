@@ -6,7 +6,7 @@
 #include "../include/maxpool.h"
 #include "../include/print_array.h"
 #include "../include/fc.h"
-//#include "../include/softmax.h"
+#include "../include/softmax.h"
 #include "../include/fixed_point.h"
 
 int main() {
@@ -37,50 +37,48 @@ int main() {
     Maxpool mp_three(6, 20);
 
     print_array(labels, 1, 100, 1);
-    
+    print_array(images, 24, 24, 1);
  
     float analyzed = 0;
     float detected = 0;
     float assumption = 0;
-  
+    double softmax_in[10];
+    
     for (int n=0; n<100; n++) {
-        std::cout << "labels[n] = " << labels[n] << "\n"; 
         conv_relu_one.conv_layer(images + n*1728, conv1_out);
         //for(int i=0; i<24*24*64; i++) std::cout << " " << conv1_out[i];       
+
         mp_one.maxpool_layer(conv1_out, mp1_out);
         //for(int i=0; i<12*12*64; i++) std::cout << " " << mp1_out[i];       
-        
+
         conv_relu_two.conv_layer(mp1_out, conv2_out);
         //for(int i=0; i<12*12*32; i++) std::cout << " " << conv2_out[i];       
+
         mp_two.maxpool_layer(conv2_out, mp2_out);
         //for(int i=0; i<6*6*32; i++) std::cout << " " << mp2_out[i];       
 
         conv_relu_three.conv_layer(mp2_out, conv3_out);
+
         mp_three.maxpool_layer(conv3_out, mp3_out);
-        
+
         reshape(mp3_out, reshape_out);
 
         fully_connected(reshape_out, local3_weights, fc_out, local3_biases);
 
-        //for(int i=0; i<10; i++) std::cout << " " << fc_out[i];
-        //std::cout << "\n";
-        
-        
-        //assumption = softmax(fc_out);
-        ac_fixed<FIXP_FC_W, FIXP_FC_I, true> max = fc_out[0];
-        float max_index = 0;
-        for (int i=1; i<10; i++) {
-            if (max < fc_out[i]) max_index = i;
-        }
-        assumption = max_index;
+        for(int i=0; i<10; i++) softmax_in[i] = fc_out[i].to_double();
+                
+        assumption = softmax(softmax_in);
+  
         analyzed += 1;
+        std::cout << "# Label: " << labels[n] <<"\n";
+        std::cout << "# Assumption: " << assumption <<"\n";
         if (assumption == labels[n]) {
             detected += 1;
         }
         std::cout << "# Analyzed: " << analyzed << "\n";
         std::cout << "# Detected: " << detected << "\n";
         std::cout << "# Rate: " << (detected/analyzed)*100 << "% \n";
-        
+        std::cout << "\n";
     }
     
     return 0;
