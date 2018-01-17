@@ -20,8 +20,8 @@ int main() {
     float reshape_out[180];
     float fc_out[10];
 
-    load_file("100-normalized-images.out", images);
-    load_file("100-labels.out", labels);
+    load_file("../db/100-normalized-images.out", images);
+    load_file("../db/100-labels.out", labels);
 
     Convolution conv_relu_one(conv1_weights, conv1_biases, 64, 24, 3);
     Convolution conv_relu_two(conv2_weights, conv2_biases, 32, 12, 64);
