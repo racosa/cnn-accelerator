@@ -1,11 +1,11 @@
 #ifndef _MAXPOOL_H_
 #define _MAXPOOL_H_
 
-#define MAXPOOL_SIZE 3
+#define MAXPOOL_SIZE FIXP_MAXPOOL_I
 #define MAXPOOL_STRIDE 2
 #define ZERO_PADDING 1
 
-#include "../lib/ac_fixed.h"
+#include "../include/fixed_point.h"
 
 class Maxpool
 {
@@ -17,7 +17,12 @@ private:
 public:
   Maxpool(const int input_size, const int input_depth);
   ~Maxpool();
-  void maxpool_layer(ac_fixed<16,3,true> input[], ac_fixed<16,3,true> output[]);
+  
+  template <typename IP, typename OP>
+  void maxpool_layer(IP input[],
+                     OP output[]);
 };
+//It must be included after class declaration
+#include "../src/maxpool_impl.h"
 
 #endif /* _MAXPOOL_H_ */

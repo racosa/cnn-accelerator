@@ -1,20 +1,5 @@
 #include "../include/cifar10.h"
 
-int load_file(const char *file_name, ac_fixed<16,3,true> *buffer) {
-    std::ifstream file(file_name);
-    int i = 0;
-    if (file.good()) {
-        float item = 0;
-        while(file >> item) {
-            buffer[i] = (ac_fixed<16,3,true>) item;
-            i++;
-        }
-        file.close();
-        return 0;
-    }
-    return 1;
-}
-
 int read_cifar10(uint8_t *images, uint8_t *labels) {
     std::ifstream file;
     unsigned int lenght;
