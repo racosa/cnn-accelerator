@@ -1,7 +1,7 @@
 #ifndef _MAXPOOL_H_
 #define _MAXPOOL_H_
 
-#define MAXPOOL_SIZE FIXP_MAXPOOL_I
+#define MAXPOOL_SIZE 3
 #define MAXPOOL_STRIDE 2
 #define ZERO_PADDING 1
 

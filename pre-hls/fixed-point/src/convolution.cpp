@@ -1,7 +1,7 @@
 #include "convolution.h"
 
-Convolution::Convolution(const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> *kernel,
-                         const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> *bias,
+Convolution::Convolution(const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true, AC_RND_ZERO> *kernel,
+                         const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true, AC_RND_ZERO> *bias,
                          const int number_of_kernels,
                          const int input_size,
                          const int input_depth)
