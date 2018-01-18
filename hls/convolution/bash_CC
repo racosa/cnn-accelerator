@@ -1,0 +1,8 @@
+
+host=`uname -n`
+export PRECISION_HOME=/softslin/precision2016_1_1/Mgc_home/
+export MODELSIM_HOME=/softslin/modelsim10_5c/modeltech/
+export CATAHOME=/softslin/catapultc10_0a/64bit/Mgc_home
+export PATH=$PATH:$MODELSIM_HOME/bin:$PRECISION_HOME/bin:$CATAHOME/bin/
+export LM_LICENSE_FILE=1718@cimekey1:1717@v212.cime.inpg.fr
+
