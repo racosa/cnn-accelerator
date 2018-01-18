@@ -16,11 +16,11 @@ float softmax(double *input){
     for(int i=1; i<10; i++){
         sum += input[i];
     }
-    
+
     for(int i=0; i<10; i++){
         input[i] = input[i]/sum;
     }
-
+    
     max = input[0];
     float max_index = 0;
     for (int i=1; i<10; i++) {
@@ -29,6 +29,5 @@ float softmax(double *input){
             max_index = i;
         }
     }
-    
     return max_index;
 }

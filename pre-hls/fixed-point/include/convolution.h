@@ -6,19 +6,20 @@
 #define ZERO_PADDING 1
 
 #include "../include/fixed_point.h"
+#include "../include/print_array.h"
 
 class Convolution {
 private:
-        const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> *kernel;
-        const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> *bias;
+    const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true, AC_RND_ZERO> *kernel;
+    const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true, AC_RND_ZERO> *bias;
 	const int number_of_kernels;
 	const int input_size;
 	const int input_depth;
 	unsigned int output_size;
 
 public:
-	Convolution(const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> *kernel,
-                    const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> *bias,
+	Convolution(const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true, AC_RND_ZERO> *kernel,
+                    const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true, AC_RND_ZERO> *bias,
                     const int number_of_kernels,
                     const int input_size,
                     const int input_depth);
