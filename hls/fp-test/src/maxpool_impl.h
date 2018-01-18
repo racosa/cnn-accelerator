@@ -1,22 +1,12 @@
-#include "maxpool.h"
-
-Maxpool::Maxpool(const int input_size, const int input_depth)
-: input_size(input_size),
-  input_depth(input_depth)
-{
-  output_size = ((input_size - MAXPOOL_SIZE + ZERO_PADDING) / MAXPOOL_STRIDE) + 1;
-}
-
-Maxpool::~Maxpool()
-{}
-
-void Maxpool::maxpool_layer(double input[], double output[]) {
+template <typename IP, typename OP>
+void Maxpool::maxpool_layer(IP input[],
+                            OP output[]) {
 
 ///// ZERO PADDING /////
 	/// VERY QUESTIONABLE DECLARATION ///
-	double pad_input[(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING)*input_depth];
+	IP pad_input[(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING)*input_depth];
 	/////////////////////////////////////
-
+        
 	for (int i = 0; i < input_depth; i++) {
 		for (int j = 0; j < input_size+ZERO_PADDING; j++) {
 			for (int k = 0; k < input_size+ZERO_PADDING; k++) {
@@ -25,7 +15,7 @@ void Maxpool::maxpool_layer(double input[], double output[]) {
 			}
 		}
 	}
-
+       
 ///// end of zero padding /////
 
    unsigned int o_d = 0; // output depth
@@ -39,7 +29,11 @@ void Maxpool::maxpool_layer(double input[], double output[]) {
         ///// Maxpooling /////
         for (int l = 0; l < MAXPOOL_SIZE; l++) { // maxpool height
           for (int m = 0; m < MAXPOOL_SIZE; m++) { // maxpool width
-            if (output[o_d*output_size*output_size + o_r*output_size + o_c] < pad_input[i*(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING) + (j+l)*(input_size+ZERO_PADDING) + (k+m)]) output[o_d*output_size*output_size + o_r*output_size + o_c] = pad_input[i*(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING) + (j+l)*(input_size+ZERO_PADDING) + (k+m)];
+            if (output[o_d*output_size*output_size + o_r*output_size + o_c] <
+                pad_input[i*(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING)
+                          + (j+l)*(input_size+ZERO_PADDING) + (k+m)])
+                output[o_d*output_size*output_size + o_r*output_size + o_c] =
+                    pad_input[i*(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING) + (j+l)*(input_size+ZERO_PADDING) + (k+m)];
           }
         }
         ///// end of maxpooling region calc /////

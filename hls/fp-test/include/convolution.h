@@ -23,7 +23,11 @@ public:
     const int input_size,
     const int input_depth);
 	~Convolution();
-	void conv_layer(ac_fixed<FIXP_IMAGES_W, FIXP_IMAGES_I, true> input[], ac_fixed<FIXP_CONV_W, FIXP_CONV_I, true> output[]);
+	
+	template <typename IP, typename OP>
+	void conv_layer(IP input[], OP output[]);
 };
+//It must be included after class declaration
+#include "../src/convolution_impl.h"
 
 #endif /* _CONVOLUTION_H_ */

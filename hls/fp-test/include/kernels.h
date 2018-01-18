@@ -9,7 +9,7 @@ extern const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> conv2_weights[];
 extern const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> conv2_biases[];
 extern const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> conv3_weights[];
 extern const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true> conv3_biases[];
-extern const ac_fixed<FIXP_FC_W, FIXP_FC_I, true> local3_weights[];
-extern const ac_fixed<FIXP_FC_W, FIXP_FC_I, true> local3_biases[];
+extern const double local3_weights[];
+extern const double local3_biases[];
 
 #endif /* _KERNELS_H_ */

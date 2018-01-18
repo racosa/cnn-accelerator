@@ -18,12 +18,12 @@ Convolution::~Convolution()
 {
 }
 
-void Convolution::conv_layer(ac_fixed<FIXP_IMAGES_W, FIXP_IMAGES_I, true> input[], ac_fixed<FIXP_CONV_W, FIXP_CONV_I, true> output[]) {
+/*void Convolution::conv_layer(double input[], double output[]) {
 
 ///// Zero padding /////
 
-/***** VERY QUESTIONABLE DECLARATION *****/
-	ac_fixed<FIXP_IMAGES_W, FIXP_IMAGES_I, true> pad_input[(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING)*input_depth];
+/// VERY QUESTIONABLE DECLARATION ///
+	double pad_input[(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING)*input_depth];
 ///////////////////////////////////////////
 
 	for (int d = 0; d < input_depth; d++) { // depth
@@ -38,7 +38,7 @@ void Convolution::conv_layer(ac_fixed<FIXP_IMAGES_W, FIXP_IMAGES_I, true> input[
 
 ///// end of zero padding /////
 
-/* ------------------------------- */
+// ------------------------------- //
 
 ///// Convolution calculation /////
 
@@ -76,4 +76,4 @@ void Convolution::conv_layer(ac_fixed<FIXP_IMAGES_W, FIXP_IMAGES_I, true> input[
 
 ///// end of calculation /////
 
-}
+}*/
