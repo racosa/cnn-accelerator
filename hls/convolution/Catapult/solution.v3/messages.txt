@@ -1,0 +1,4 @@
+
+# Messages from "go new"
+
+Branching solution 'solution.v3' at state 'new' (PRJ-2)
