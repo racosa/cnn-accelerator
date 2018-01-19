@@ -1,1 +1,0 @@
-g++ -std=c++11 -Wall -Werror -g convolution.h ac_fixed.h ac_int.h convolution.cpp main.cpp -o conv
