@@ -1,13 +1,10 @@
 #include "convolution.h"
 
-void apply_conv1(const ac_fixed<IN_W, IN_I, false> input[],
-                 ac_fixed<OUT_W, OUT_I, false> output[]) {
+#pragma hls_design top
+void apply_conv1(ac_channel<in_t> input[],
+                    ac_channel<out_t> output[]) {
 
-///// Zero padding /////
-
-/***** VERY QUESTIONABLE DECLARATION *****/
 	ac_fixed<IN_W, IN_I, false> pad_input[(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING)*INPUT_DEPTH];
-///////////////////////////////////////////
 
 	for (int d = 0; d < INPUT_DEPTH; d++) { // depth
 		for (int r = 0; r < INPUT_SIZE_Y+2*ZERO_PADDING; r++) { // row
@@ -18,14 +15,6 @@ void apply_conv1(const ac_fixed<IN_W, IN_I, false> input[],
 			}
 		}
 	}
-
-///// end of zero padding /////
-
-/* ------------------------------- */
-
-///// Convolution calculation /////
-
-	// output[NB_KERNELS][OUTPUT_SIZE][OUTPUT_SIZE]
 
         int o_r = 0; // output row index
 	int o_c = 0; // output column index
@@ -56,7 +45,4 @@ void apply_conv1(const ac_fixed<IN_W, IN_I, false> input[],
 		o_r = 0;
 		o_d+=1;
 	}
-
-///// end of calculation /////
-
 }
