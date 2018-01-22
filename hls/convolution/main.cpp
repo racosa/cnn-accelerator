@@ -9,7 +9,7 @@ CCS_MAIN(int argc, char *argv) {
     std::ofstream input("input.txt");
     std::ofstream output("output.txt");
    
-    ac_channel<out_t> conv_out[160*120*3];
+    ac_channel<out_t> conv_out;
            
     apply_conv1(image, conv_out);
 
