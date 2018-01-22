@@ -25,7 +25,7 @@
 #define OUT_W 10
 #define OUT_I 10
 
-typedef const ac_fixed<IN_W, IN_I, false> in_t;
+typedef ac_fixed<IN_W, IN_I, false> in_t;
 typedef ac_fixed<OUT_W, OUT_I, false> out_t;
 
 void apply_conv1(ac_channel<in_t> input[], ac_channel<out_t> output[]);

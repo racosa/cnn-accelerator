@@ -13,7 +13,7 @@ void apply_conv1(ac_channel<in_t> &data_in,
             for (int c = 0; c < INPUT_SIZE_X+2*ZERO_PADDING; c++) { // column
                 if (r < ZERO_PADDING || r >= INPUT_SIZE_Y+ZERO_PADDING) pad_input[d*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + r*(INPUT_SIZE_X+2*ZERO_PADDING) + c] = 0;
                 else if (c < ZERO_PADDING || c >= INPUT_SIZE_X+ZERO_PADDING) pad_input[d*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + r*(INPUT_SIZE_X+2*ZERO_PADDING) + c] = 0;
-                else pad_input[d*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + r*(INPUT_SIZE_X+2*ZERO_PADDING) + c] = input[d*INPUT_SIZE_X*INPUT_SIZE_Y + (r-ZERO_PADDING)*INPUT_SIZE_X + (c-ZERO_PADDING)];
+                else pad_input[d*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + r*(INPUT_SIZE_X+2*ZERO_PADDING) + c] = (in_t)input[d*INPUT_SIZE_X*INPUT_SIZE_Y + (r-ZERO_PADDING)*INPUT_SIZE_X + (c-ZERO_PADDING)];
             }
         }
     }
