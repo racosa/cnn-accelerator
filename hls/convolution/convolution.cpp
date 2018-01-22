@@ -6,7 +6,8 @@ void apply_conv1(ac_channel<in_t> &data_in,
     
     in_t input = data_in.read();        
     in_t pad_input[(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING)*INPUT_DEPTH];
-    out_t output[160*120*3];
+    //out_t output[160*120*3];
+    out_t output[24];
     
     for (int d = 0; d < INPUT_DEPTH; d++) { // depth
         for (int r = 0; r < INPUT_SIZE_Y+2*ZERO_PADDING; r++) { // row

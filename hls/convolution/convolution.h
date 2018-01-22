@@ -28,6 +28,7 @@
 typedef ac_fixed<IN_W, IN_I, false> in_t;
 typedef ac_fixed<OUT_W, OUT_I, false> out_t;
 
-void apply_conv1(ac_channel<in_t> input[], ac_channel<out_t> output[]);
+void apply_conv1(ac_channel<in_t> &data_in, 
+		 ac_channel<out_t> &data_out);
 
 #endif /* _CONVOLUTION_H_ */

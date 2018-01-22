@@ -2,17 +2,19 @@
 #include <iostream>
 #include "mc_scverify.h"
 #include "convolution.h"
-#include "image.h"
+//#include "image.h"
 
 CCS_MAIN(int argc, char *argv) {
     std::cout << "# Starting Testbench \n";
     std::ofstream input("input.txt");
     std::ofstream output("output.txt");
-    
-    ac_channel<in_t> data_in;
-    ac_channel<out_t> data_out;
-           
-    CSS_DESIGN(apply_conv1)(data_in, data_out);
+   
+    static ac_channel<in_t> data_in;
+    static ac_channel<out_t> data_out;
+    in_t image[] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+    data_in.write(image);
+
+    CCS_DESIGN(apply_conv1)(data_in, data_out);
 
     for (int z = 0; z < INPUT_DEPTH; z++) {
         for (int y = 0; y < INPUT_SIZE_Y; y++) {
