@@ -3,5 +3,7 @@
 #define KERNEL_W 10
 #define KERNEL_I 10
 
-extern const ac_fixed<KERNEL_W, KERNEL_I, true> kernel[];
-extern const ac_fixed<KERNEL_W, KERNEL_I, true> bias[];
+typedef const ac_fixed<KERNEL_W, KERNEL_I, false> kernel_t;
+
+extern kernel_t kernel[];
+extern kernel_t bias[];
