@@ -19,11 +19,11 @@
 
 #define IN_W 10
 #define IN_I 10
-#define OUT_W 10
-#define OUT_I 10
+#define OUT_W 11
+#define OUT_I 11
 
-typedef ac_fixed<IN_W, IN_I, false> in_t;
-typedef ac_fixed<OUT_W, OUT_I, false> out_t;
+typedef ac_fixed<IN_W, IN_I, true> in_t;
+typedef ac_fixed<OUT_W, OUT_I, true> out_t;
 
 void apply_conv(in_t *conv_in, 
 		out_t *conv_out);

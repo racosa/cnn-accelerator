@@ -24,14 +24,20 @@ int main() {
     for (int z = 0; z < INPUT_DEPTH; z++) {
         for (int y = 0; y < INPUT_SIZE_Y; y++) {
             for (int x = 0; x < INPUT_SIZE_X; x++) {
-                input << conv_in[z*INPUT_SIZE_X*INPUT_SIZE_Y + y*INPUT_SIZE_X + x] << " ";
-                output << conv_out[z*INPUT_SIZE_X*INPUT_SIZE_Y + y*INPUT_SIZE_X + x] << " "; 
+                if (z == INPUT_DEPTH-1 && y == INPUT_SIZE_Y-1 && x == INPUT_SIZE_X-1){
+                    input << conv_in[z*INPUT_SIZE_X*INPUT_SIZE_Y + y*INPUT_SIZE_X + x] << "\n";
+                    output << conv_out[z*INPUT_SIZE_X*INPUT_SIZE_Y + y*INPUT_SIZE_X + x] << "\n";
+                }
+                else{
+                    input << conv_in[z*INPUT_SIZE_X*INPUT_SIZE_Y + y*INPUT_SIZE_X + x] << " ";
+                    output << conv_out[z*INPUT_SIZE_X*INPUT_SIZE_Y + y*INPUT_SIZE_X + x] << " ";
+                }    
             }
-            input << std::endl;
-            output << std::endl;
+            //input << std::endl;
+            //output << std::endl;
         }
-        input << std::endl;
-        output << std::endl;
+        //input << std::endl;
+        //output << std::endl;
     }
     std::cout << "# End of Testbench \n";
     

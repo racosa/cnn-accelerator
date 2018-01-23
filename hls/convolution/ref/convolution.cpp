@@ -50,6 +50,8 @@ void apply_conv(in_t *conv_in,
                 temp = temp + bias[i];
                 if (temp < 0) {
                     temp = 0;
+                } else if (temp > 255) {
+                    temp = 255;
                 }
                 output[o_d*OUTPUT_SIZE_X*OUTPUT_SIZE_Y + o_r*OUTPUT_SIZE_X + o_c] = temp;
                 o_c+=1;
