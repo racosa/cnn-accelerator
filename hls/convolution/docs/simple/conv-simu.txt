@@ -1,0 +1,28 @@
+# Starting Testbench 
+# End of Testbench 
+# Info: Execution of user-supplied C++ testbench 'main()' has completed with exit code = 0
+# 
+# Info: Collecting data completed
+#    captured 1 values of conv_in
+#    captured 1 values of conv_out_IN
+#    captured 1 values of conv_out
+# Info: scverify_top/user_tb: Simulation completed
+# Info: scverify_top/Monitor: runs with constant clock period 10 ns
+# Info: scverify_top/Monitor: Throughput: 1 transaction per 88203010 ns
+# Info: scverify_top/Monitor: Throughput period: 8820301 cycles does not match expected 8820302 cycles (2 transactions).
+# 
+# Checking results
+# 'conv_out'
+#    capture count        = 1
+#    comparison count     = 1
+#    ignore count         = 0
+#    error count          = 0
+#    stuck in dut fifo    = 0
+#    stuck in golden fifo = 0
+# 
+# 
+# Info: Simulation PASSED @ 88203136 ns
+# ** Note: (vsim-6574) SystemC simulation stopped by user.
+# 1
+# 
+
