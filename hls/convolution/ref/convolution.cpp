@@ -53,7 +53,8 @@ void apply_conv(in_t *conv_in,
                 } else if (temp > 255) {
                     temp = 255;
                 }
-                output[o_d*OUTPUT_SIZE_X*OUTPUT_SIZE_Y + o_r*OUTPUT_SIZE_X + o_c] = temp;
+                //output[o_d*OUTPUT_SIZE_X*OUTPUT_SIZE_Y + o_r*OUTPUT_SIZE_X + o_c] = temp;
+                output[o_d + 3*o_r*OUTPUT_SIZE_X + 3*o_c] = temp;
                 o_c+=1;
             }
             o_c = 0;
@@ -63,4 +64,7 @@ void apply_conv(in_t *conv_in,
         o_r = 0;
         o_d+=1;
     }
+    
+
+    
 }
