@@ -8,7 +8,7 @@ void apply_conv(in_t *conv_in,
   
     in_t *input = conv_in;        
     out_t *output = conv_out;
-    out_t temp = 0; 
+    temp_t temp = 0; 
     int o_r = 0; // output row index
     int o_c = 0; // output column index
     int o_d = 0; // output depth index
@@ -41,9 +41,9 @@ void apply_conv(in_t *conv_in,
                 for (int l = 0; l < INPUT_DEPTH; l++){ // operation with kernel depth last
                     for (int m = 0; m < KERNEL_SIZE; m++) { // operation with kernel height second
                         for (int n = 0; n < KERNEL_SIZE; n++) { // operation with kernel width first
-                            temp = output[o_d*OUTPUT_SIZE_X*OUTPUT_SIZE_Y + o_r*OUTPUT_SIZE_X + o_c];
+			  //temp = output[o_d*OUTPUT_SIZE_X*OUTPUT_SIZE_Y + o_r*OUTPUT_SIZE_X + o_c];
                             temp = temp + pad_input[l*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + (j+m)*(INPUT_SIZE_X+2*ZERO_PADDING) + (k+n)]*kernel[i*KERNEL_SIZE*KERNEL_SIZE*INPUT_DEPTH + l*KERNEL_SIZE*KERNEL_SIZE + m*KERNEL_SIZE + n];
-			    output[o_d*OUTPUT_SIZE_X*OUTPUT_SIZE_Y + o_r*OUTPUT_SIZE_X + o_c] = temp;
+			    //output[o_d*OUTPUT_SIZE_X*OUTPUT_SIZE_Y + o_r*OUTPUT_SIZE_X + o_c] = temp;
                         }
                     }
                 }
