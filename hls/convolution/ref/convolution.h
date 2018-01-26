@@ -24,7 +24,7 @@
 
 typedef ac_fixed<IN_W, IN_I, false> in_t;
 typedef ac_fixed<OUT_W, OUT_I, false> out_t;
-typedef ac_fixed<12, 12, true> temp_t;
+typedef ac_fixed<11, 11, true> temp_t;
 
 void apply_conv(in_t *conv_in, 
 		out_t *conv_out);

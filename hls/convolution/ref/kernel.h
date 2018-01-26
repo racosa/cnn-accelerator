@@ -1,7 +1,7 @@
 #include "ac_fixed.h"
 
-#define KERNEL_W 4
-#define KERNEL_I 4
+#define KERNEL_W 3
+#define KERNEL_I 3
 
 typedef const ac_fixed<KERNEL_W, KERNEL_I, true> kernel_t;
 
