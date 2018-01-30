@@ -1,0 +1,9 @@
+host=`uname -n`
+export PRECISION_HOME=/softslin/precision2014a_64b/Mgc_home/
+export MODELSIM_HOME=/softslin/modelsim10_5c/modeltech/
+export CATAHOME=/softslin/catapultc10_0a/64bit/Mgc_home
+export PATH=$PATH:$MODELSIM_HOME/bin:$PRECISION_HOME/bin:$CATAHOME/bin/
+
+source settings_catapult_c10_0a_64b.sh
+source settings_modelsim
+source settings_vivado_2017_1.sh

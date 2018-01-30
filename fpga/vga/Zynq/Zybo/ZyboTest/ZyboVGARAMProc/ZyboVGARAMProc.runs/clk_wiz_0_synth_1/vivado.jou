@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:54:47 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Tue Nov  7 09:23:56 2017
+# Process ID: 4679
+# Current directory: /tima/smancini/tmp/ZyboVGAMire/ZyboVGAMire/ZyboVGAMire.runs/clk_wiz_0_synth_1
+# Command line: vivado -log clk_wiz_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_wiz_0.tcl
+# Log file: /tima/smancini/tmp/ZyboVGAMire/ZyboVGAMire/ZyboVGAMire.runs/clk_wiz_0_synth_1/clk_wiz_0.vds
+# Journal file: /tima/smancini/tmp/ZyboVGAMire/ZyboVGAMire/ZyboVGAMire.runs/clk_wiz_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source clk_wiz_0.tcl -notrace

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="blk_mem_mire_synth_1" LaunchDir="/tp/xph3sei/xph3sei702/Documents/cnn-accelerator/fpga/vga/Zynq/Zybo/ZyboTest/ZyboVGARAMProc/ZyboVGARAMProc.runs/blk_mem_mire_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+
