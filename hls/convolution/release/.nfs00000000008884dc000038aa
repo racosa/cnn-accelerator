@@ -1,0 +1,629 @@
+//  Catapult University Version 10.0a/269363 (Production Release) Wed Nov  9 17:38:00 PST 2016
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2016, All Rights Reserved.
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Linux xph3sei702@cimepe29 3.2.0-4-amd64 #1 SMP Debian 3.2.60-1+deb7u3 x86_64
+//  
+//  Package information: SIFLIBS v23.0_1.0, HLS_PKGS v23.0_1.0, 
+//                       DesignPad v2.78_1.0
+//  
+//  This version may only be used for academic purposes.  Some optimizations 
+//  are disabled, so results obtained from this version may be sub-optimal.
+//  
+//  Start time Sun Feb  4 21:40:32 2018
+# -------------------------------------------------
+# Logging session transcript to file "/tmp/log295544663592.0"
+dofile /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/directives.tcl
+# > dofile /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/directives.tcl
+# > solution new -state initial
+# Info: Branching solution 'solution.v2' at state 'initial' (PRJ-2)
+# solution.v2
+# > solution options defaults
+# > solution options set /Output/GenerateCycleNetlist false
+# false
+# > solution options set /Flows/SCVerify/LINK_LIBPATHS {/usr/lib /usr/lib/x86_64-linux-gnu}
+# /usr/lib /usr/lib/x86_64-linux-gnu
+# > flow package require /SCVerify
+# 8.0a
+# > solution file add ./testbench.cpp -type C++ -exclude true
+# /INPUTFILES/1
+# > solution file add ./image.cpp -type C++ -exclude true
+# /INPUTFILES/2
+# > solution file add ./kernel.cpp -type C++
+# /INPUTFILES/3
+# > solution file add ./convolution.cpp -type C++
+# /INPUTFILES/4
+# > go new
+# > directive set -DESIGN_GOAL area
+# /DESIGN_GOAL area
+# > directive set -OLD_SCHED false
+# /OLD_SCHED false
+# > directive set -SPECULATE true
+# /SPECULATE true
+# > directive set -MERGEABLE true
+# /MERGEABLE true
+# > directive set -REGISTER_THRESHOLD 256
+# /REGISTER_THRESHOLD 256
+# > directive set -MEM_MAP_THRESHOLD 32
+# /MEM_MAP_THRESHOLD 32
+# > directive set -FSM_ENCODING none
+# /FSM_ENCODING none
+# > directive set -REG_MAX_FANOUT 0
+# /REG_MAX_FANOUT 0
+# > directive set -NO_X_ASSIGNMENTS true
+# /NO_X_ASSIGNMENTS true
+# > directive set -SAFE_FSM false
+# /SAFE_FSM false
+# > directive set -ASSIGN_OVERHEAD 0
+# /ASSIGN_OVERHEAD 0
+# > directive set -UNROLL no
+# /UNROLL no
+# > directive set -IO_MODE super
+# /IO_MODE super
+# > directive set -REGISTER_IDLE_SIGNAL false
+# /REGISTER_IDLE_SIGNAL false
+# > directive set -IDLE_SIGNAL {}
+# /IDLE_SIGNAL {}
+# > directive set -STALL_FLAG false
+# /STALL_FLAG false
+# > directive set -TRANSACTION_DONE_SIGNAL true
+# /TRANSACTION_DONE_SIGNAL true
+# > directive set -DONE_FLAG {}
+# /DONE_FLAG {}
+# > directive set -READY_FLAG {}
+# /READY_FLAG {}
+# > directive set -START_FLAG {}
+# /START_FLAG {}
+# > directive set -BLOCK_SYNC none
+# /BLOCK_SYNC none
+# > directive set -TRANSACTION_SYNC ready
+# /TRANSACTION_SYNC ready
+# > directive set -DATA_SYNC none
+# /DATA_SYNC none
+# > directive set -RESET_CLEARS_ALL_REGS true
+# /RESET_CLEARS_ALL_REGS true
+# > directive set -CLOCK_OVERHEAD 20.000000
+# /CLOCK_OVERHEAD 20.000000
+# > directive set -OPT_CONST_MULTS use_library
+# /OPT_CONST_MULTS use_library
+# > directive set -CHARACTERIZE_ROM false
+# /CHARACTERIZE_ROM false
+# > directive set -PROTOTYPE_ROM true
+# /PROTOTYPE_ROM true
+# > directive set -ROM_THRESHOLD 64
+# /ROM_THRESHOLD 64
+# > directive set -CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+# /CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+# > directive set -CLUSTER_OPT_CONSTANT_INPUTS true
+# /CLUSTER_OPT_CONSTANT_INPUTS true
+# > directive set -CLUSTER_RTL_SYN false
+# /CLUSTER_RTL_SYN false
+# > directive set -CLUSTER_FAST_MODE false
+# /CLUSTER_FAST_MODE false
+# > directive set -CLUSTER_TYPE combinational
+# /CLUSTER_TYPE combinational
+# > directive set -COMPGRADE fast
+# /COMPGRADE fast
+# > go analyze
+# Info: Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+# Moving session transcript to file "/tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/catapult.log"
+# Front End called with arguments: -- /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/convolution.cpp /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/kernel.cpp (CIN-69)
+# Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+# $PROJECT_HOME/convolution.cpp(5): Pragma 'hls_design<top>' detected on routine 'apply_conv' (CIN-6)
+# Source file analysis completed (CIN-68)
+# Info: Completed transformation 'analyze' on solution 'solution.v2': elapsed time 3.62 seconds, memory usage 854760kB, peak memory usage 854760kB (SOL-9)
+# > directive set -DESIGN_HIERARCHY apply_conv__FP75ac_fixed__tm__59_XCiL_1_8XCiL_1_8XCbL_1_0XC9ac_q_modeL_1_0XC9ac_o_modeL_1_0T1
+# /DESIGN_HIERARCHY apply_conv__FP75ac_fixed__tm__59_XCiL_1_8XCiL_1_8XCbL_1_0XC9ac_q_modeL_1_0XC9ac_o_modeL_1_0T1
+# > go compile
+# Info: Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+# Generating synthesis internal form... (CIN-3)
+# $PROJECT_HOME/convolution.cpp(5): Found top design routine 'apply_conv' specified by directive (CIN-52)
+# $PROJECT_HOME/convolution.cpp(6): Synthesizing routine 'apply_conv' (CIN-13)
+# $PROJECT_HOME/convolution.cpp(6): Inlining routine 'apply_conv' (CIN-14)
+# Warning: $PROJECT_HOME/convolution.cpp(41): Instantiating global variable 'kernel' which may be accessed outside this scope (CIN-18)
+# Info: Optimizing partition '/apply_conv/kernel:init': (Total ops = 82, Real ops = 0, Vars = 0) (SOL-10)
+# Info: Optimizing partition '/apply_conv/kernel:init': (Total ops = 1, Real ops = 0, Vars = 0) (SOL-10)
+# Info: Optimizing partition '/apply_conv/kernel:init': (Total ops = 1, Real ops = 0, Vars = 0) (SOL-10)
+# Info: Optimizing partition '/apply_conv/kernel:init': (Total ops = 1, Real ops = 0, Vars = 0) (SOL-10)
+# Warning: $PROJECT_HOME/convolution.cpp(45): Instantiating global variable 'bias' which may be accessed outside this scope (CIN-18)
+# Info: Optimizing partition '/apply_conv/bias:init': (Total ops = 4, Real ops = 0, Vars = 0) (SOL-10)
+# Info: Optimizing partition '/apply_conv/bias:init': (Total ops = 1, Real ops = 0, Vars = 0) (SOL-10)
+# Info: Optimizing partition '/apply_conv/bias:init': (Total ops = 1, Real ops = 0, Vars = 0) (SOL-10)
+# Info: Optimizing partition '/apply_conv/bias:init': (Total ops = 1, Real ops = 0, Vars = 0) (SOL-10)
+# $PROJECT_HOME/convolution.cpp(6): Optimizing block '/apply_conv' ... (CIN-4)
+# $PROJECT_HOME/convolution.cpp(6): Inout port 'conv_in' is only used as an input. (OPT-10)
+# $PROJECT_HOME/convolution.cpp(7): Inout port 'conv_out' is only used as an output. (OPT-11)
+# Info: Optimizing partition '/apply_conv': (Total ops = 198, Real ops = 93, Vars = 54) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 198, Real ops = 93, Vars = 52) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 193, Real ops = 87, Vars = 52) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 193, Real ops = 87, Vars = 54) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 193, Real ops = 87, Vars = 54) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 193, Real ops = 87, Vars = 52) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 178, Real ops = 87, Vars = 39) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 178, Real ops = 87, Vars = 39) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 178, Real ops = 87, Vars = 41) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 178, Real ops = 87, Vars = 41) (SOL-10)
+# Info: $PROJECT_HOME/convolution.cpp(41): Splitting object 'CONV_K_W:acc.sdt' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(12): Splitting object 'o_r' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(13): Splitting object 'o_c' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(22): Splitting object 'pref' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(25): Splitting object 'pref#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(28): Splitting object 'pref#2' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(28): Splitting object 'PAD:for:for:else:else:acc.tdx' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(41): Splitting object 'pref#3' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(41): Splitting object 'pref:pref.pref#3' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(41): Splitting object 'pref#4' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(41): Splitting object 'pref:pref.pref#4' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(45): Splitting object 'pref#5' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(45): Splitting object 'pref:pref.pref#5' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(51): Splitting object 'CONV_H_SLIDE:acc.tdx' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(10): Splitting object 'pref:output.idx.pref' into 2 segments (OPT-19)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 193, Real ops = 85, Vars = 56) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 163, Real ops = 62, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 163, Real ops = 62, Vars = 21) (SOL-10)
+# Info: $PROJECT_HOME/convolution.cpp(11): Splitting object 'temp' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(14): Splitting object 'o_d' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(12): Splitting object 'o_r(24:0)' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(13): Splitting object 'o_c(29:0)' into 2 segments (OPT-19)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 161, Real ops = 62, Vars = 24) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 159, Real ops = 62, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 159, Real ops = 62, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 159, Real ops = 62, Vars = 19) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 159, Real ops = 62, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 159, Real ops = 62, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 159, Real ops = 62, Vars = 19) (SOL-10)
+# $PROJECT_HOME/convolution.cpp(20): Loop '/apply_conv/core/PAD:for:for' iterated at most 162 times. (LOOP-2)
+# $PROJECT_HOME/convolution.cpp(19): Loop '/apply_conv/core/PAD:for' iterated at most 122 times. (LOOP-2)
+# $PROJECT_HOME/convolution.cpp(18): Loop '/apply_conv/core/PAD' iterated at most 3 times. (LOOP-2)
+# $PROJECT_HOME/convolution.cpp(40): Loop '/apply_conv/core/CONV_K_W' iterated at most 3 times. (LOOP-2)
+# $PROJECT_HOME/convolution.cpp(39): Loop '/apply_conv/core/CONV_K_H' iterated at most 3 times. (LOOP-2)
+# $PROJECT_HOME/convolution.cpp(38): Loop '/apply_conv/core/CONV_K_D' iterated at most 3 times. (LOOP-2)
+# $PROJECT_HOME/convolution.cpp(36): Loop '/apply_conv/core/CONV_H_SLIDE' iterated at most 160 times. (LOOP-2)
+# $PROJECT_HOME/convolution.cpp(35): Loop '/apply_conv/core/CONV_V_SLIDE' iterated at most 120 times. (LOOP-2)
+# $PROJECT_HOME/convolution.cpp(34): Loop '/apply_conv/core/CONV_NB_K' iterated at most 3 times. (LOOP-2)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 237, Real ops = 56, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 185, Real ops = 56, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 185, Real ops = 56, Vars = 23) (SOL-10)
+# Info: $PROJECT_HOME/convolution.cpp(18): Splitting object 'PAD:d' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(19): Splitting object 'PAD:for:r' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(20): Splitting object 'PAD:for:for:c' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(34): Splitting object 'CONV_NB_K:i' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(35): Splitting object 'CONV_V_SLIDE:j' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(36): Splitting object 'CONV_H_SLIDE:k' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(38): Splitting object 'CONV_K_D:l' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(39): Splitting object 'CONV_K_H:m' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(40): Splitting object 'CONV_K_W:n' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(14): Splitting object 'o_d(16:0)' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(12): Splitting object 'o_r(9:0)' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(13): Splitting object 'o_c(14:0)' into 2 segments (OPT-19)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 162, Real ops = 56, Vars = 33) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 153, Real ops = 56, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 153, Real ops = 56, Vars = 23) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 153, Real ops = 56, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 153, Real ops = 56, Vars = 23) (SOL-10)
+# Design 'apply_conv' was read (SOL-1)
+# Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+# Info: Completed transformation 'compile' on solution 'apply_conv.v1': elapsed time 3.01 seconds, memory usage 986104kB, peak memory usage 986104kB (SOL-9)
+# > solution library add mgc_Xilinx-ARTIX-7-1_beh_psr -- -rtlsyntool {Precision 2014a} -manufacturer Xilinx -family ARTIX-7 -speed -1 -part 7A100TCSG324
+# > solution library add ram_Xilinx-ARTIX-7-1_RAMDB
+# > solution library add ram_Xilinx-ARTIX-7-1_RAMSB
+# > solution library add Xilinx_RAMS
+# > solution library add Xilinx_accel
+# > go libraries
+# Info: Starting transformation 'libraries' on solution 'apply_conv.v1' (SOL-8)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/psr2014a/mgc_Xilinx-ARTIX-7-1_beh_psr.lib' [mgc_Xilinx-ARTIX-7-1_beh_psr]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/psr2014a/ram_Xilinx-ARTIX-7-1_RAMDB.lib' [ram_Xilinx-ARTIX-7-1_RAMDB]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/siflibs/psr2014a/ram_Xilinx-ARTIX-7-1_RAMSB.lib' [ram_Xilinx-ARTIX-7-1_RAMSB]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_RAMS_psr.lib' [Xilinx_RAMS]... (LIB-49)
+# Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_accel_psr.lib' [Xilinx_accel]... (LIB-49)
+# Warning: No Encrypted Liberty technology libraries have been specified (LIB-192)
+# Warning: No Liberty technology libraries have been specified (LIB-192)
+# Warning: No Synopsys DB technology libraries have been specified (LIB-192)
+# Info: Completed transformation 'libraries' on solution 'apply_conv.v1': elapsed time 0.26 seconds, memory usage 986104kB, peak memory usage 986104kB (SOL-9)
+# > directive set -CLOCKS {clk {-CLOCK_PERIOD 40.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 20.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# /CLOCKS {clk {-CLOCK_PERIOD 40.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 20.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+# > go assembly
+# Info: Starting transformation 'assembly' on solution 'apply_conv.v1' (SOL-8)
+# Info: Optimizing partition '/apply_conv': (Total ops = 154, Real ops = 57, Vars = 25) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 154, Real ops = 57, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 154, Real ops = 57, Vars = 25) (SOL-10)
+# Info: Completed transformation 'assembly' on solution 'apply_conv.v1': elapsed time 0.13 seconds, memory usage 986104kB, peak memory usage 986104kB (SOL-9)
+# > directive set /apply_conv/conv_in:rsc -MAP_TO_MODULE Xilinx_RAMS.BLOCK_1R1W_RBW
+# /apply_conv/conv_in:rsc/MAP_TO_MODULE Xilinx_RAMS.BLOCK_1R1W_RBW
+# > directive set /apply_conv/core/main -PIPELINE_INIT_INTERVAL 1
+# /apply_conv/core/main/PIPELINE_INIT_INTERVAL 1
+# > directive set /apply_conv/conv_out:rsc -MAP_TO_MODULE Xilinx_RAMS.BLOCK_1R1W_RBW
+# /apply_conv/conv_out:rsc/MAP_TO_MODULE Xilinx_RAMS.BLOCK_1R1W_RBW
+# > directive set /apply_conv/kernel.rom -WORD_WIDTH 36
+# /apply_conv/kernel.rom/WORD_WIDTH 36
+# > directive set /apply_conv/core/pad_input:rsc -MAP_TO_MODULE Xilinx_RAMS.BLOCK_1R1W_RBW
+# /apply_conv/core/pad_input:rsc/MAP_TO_MODULE Xilinx_RAMS.BLOCK_1R1W_RBW
+# > go architect
+# Info: Starting transformation 'loops' on solution 'apply_conv.v1' (SOL-8)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 156, Real ops = 57, Vars = 21) (SOL-10)
+# $PROJECT_HOME/convolution.cpp(20): Loop '/apply_conv/core/PAD:for:for' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(19): Loop '/apply_conv/core/PAD:for' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(18): Loop '/apply_conv/core/PAD' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(40): Loop '/apply_conv/core/CONV_K_W' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(39): Loop '/apply_conv/core/CONV_K_H' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(38): Loop '/apply_conv/core/CONV_K_D' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(36): Loop '/apply_conv/core/CONV_H_SLIDE' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(35): Loop '/apply_conv/core/CONV_V_SLIDE' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(34): Loop '/apply_conv/core/CONV_NB_K' is left rolled. (LOOP-4)
+# $PROJECT_HOME/convolution.cpp(6): Loop '/apply_conv/core/main' is left rolled. (LOOP-4)
+# Info: Completed transformation 'loops' on solution 'apply_conv.v1': elapsed time 0.04 seconds, memory usage 986104kB, peak memory usage 986104kB (SOL-9)
+# Info: Starting transformation 'memories' on solution 'apply_conv.v1' (SOL-8)
+# $PROJECT_HOME/convolution.cpp(16): Memory Resource '/apply_conv/core/pad_input:rsc' (from var: pad_input) mapped to 'Xilinx_RAMS.BLOCK_1R1W_RBW' (size: 59292 x 8). (MEM-4)
+# $PROJECT_HOME/convolution.cpp(6): Memory Resource '/apply_conv/conv_in:rsc' (from var: conv_in) mapped to 'Xilinx_RAMS.BLOCK_1R1W_RBW' (size: 57600 x 8). (MEM-4)
+# $PROJECT_HOME/convolution.cpp(7): Memory Resource '/apply_conv/conv_out:rsc' (from var: conv_out) mapped to 'Xilinx_RAMS.BLOCK_1R1W_RBW' (size: 76800 x 8). (MEM-4)
+# Info: Optimizing partition '/apply_conv': (Total ops = 155, Real ops = 57, Vars = 27) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 155, Real ops = 57, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 155, Real ops = 57, Vars = 21) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 155, Real ops = 57, Vars = 27) (SOL-10)
+# Info: Completed transformation 'memories' on solution 'apply_conv.v1': elapsed time 0.54 seconds, memory usage 994948kB, peak memory usage 994948kB (SOL-9)
+# Info: Starting transformation 'cluster' on solution 'apply_conv.v1' (SOL-8)
+# Info: Completed transformation 'cluster' on solution 'apply_conv.v1': elapsed time 0.07 seconds, memory usage 994948kB, peak memory usage 994948kB (SOL-9)
+# Info: Starting transformation 'architect' on solution 'apply_conv.v1' (SOL-8)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 245, Real ops = 71, Vars = 46) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 260, Real ops = 79, Vars = 51) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 202, Real ops = 63, Vars = 37) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 820, Real ops = 201, Vars = 406) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 348, Real ops = 173, Vars = 106) (SOL-10)
+# Info: Optimizing partition '/apply_conv/core': (Total ops = 347, Real ops = 173, Vars = 102) (SOL-10)
+# Design 'apply_conv' contains '185' real operations. (SOL-11)
+# Warning: Extrapolation detected. Script '/tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/Catapult/apply_conv.v1/adjust_char_library.tcl' generated. (LIB-142)
+# Info: Completed transformation 'architect' on solution 'apply_conv.v1': elapsed time 1.26 seconds, memory usage 1003140kB, peak memory usage 1003140kB (SOL-9)
+# > go extract
+# Info: Starting transformation 'allocate' on solution 'apply_conv.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/apply_conv/core' (CRAAS-1)
+# Info: Select qualified components for data operations ... (CRAAS-3)
+# Info: Apply resource constraints on data operations ... (CRAAS-4)
+# $PROJECT_HOME/convolution.cpp(6): Prescheduled LOOP '/apply_conv/core/main' (4 c-steps) (SCHD-7)
+# $PROJECT_HOME/convolution.cpp(6): Prescheduled LOOP '/apply_conv/core/core:rlp' (1 c-steps) (SCHD-7)
+# $PROJECT_HOME/convolution.cpp(6): Prescheduled SEQUENTIAL '/apply_conv/core' (total length 5 c-steps) (SCHD-8)
+# Info: $PROJECT_HOME/convolution.cpp(6): Initial schedule of SEQUENTIAL '/apply_conv/core': Latency = 1614493, Area (Datapath, Register, Total) = 2178.29, 0.00, 2178.29 (CRAAS-11)
+# At least one feasible schedule exists. (CRAAS-9)
+# Info: Optimized LOOP '/apply_conv/core/main': Latency = 1614493, Area (Datapath, Register, Total) = 1504.29, 0.00, 1504.29 (CRAAS-10)
+# Info: $PROJECT_HOME/convolution.cpp(6): Final schedule of SEQUENTIAL '/apply_conv/core': Latency = 1614493, Area (Datapath, Register, Total) = 1504.29, 0.00, 1504.29 (CRAAS-12)
+# Resource allocation and scheduling done. (CRAAS-2)
+# Netlist written to file 'schedule.gnt' (NET-4)
+# Info: Completed transformation 'allocate' on solution 'apply_conv.v1': elapsed time 0.98 seconds, memory usage 1003140kB, peak memory usage 1003140kB (SOL-9)
+# Info: Starting transformation 'schedule' on solution 'apply_conv.v1' (SOL-8)
+# Performing concurrent resource allocation and scheduling on '/apply_conv/core' (CRAAS-1)
+# Global signal 'conv_in:rsc.re' added to design 'apply_conv' for component 'conv_in:rsci' (LIB-3)
+# Global signal 'conv_in:rsc.q' added to design 'apply_conv' for component 'conv_in:rsci' (LIB-3)
+# Global signal 'conv_in:rsc.radr' added to design 'apply_conv' for component 'conv_in:rsci' (LIB-3)
+# Global signal 'conv_out:rsc.we' added to design 'apply_conv' for component 'conv_out:rsci' (LIB-3)
+# Global signal 'conv_out:rsc.d' added to design 'apply_conv' for component 'conv_out:rsci' (LIB-3)
+# Global signal 'conv_out:rsc.wadr' added to design 'apply_conv' for component 'conv_out:rsci' (LIB-3)
+# Global signal 'pad_input:rsc.we' added to design 'apply_conv' for component 'pad_input:rsci' (LIB-3)
+# Global signal 'pad_input:rsc.d' added to design 'apply_conv' for component 'pad_input:rsci' (LIB-3)
+# Global signal 'pad_input:rsc.wadr' added to design 'apply_conv' for component 'pad_input:rsci' (LIB-3)
+# Global signal 'pad_input:rsc.re' added to design 'apply_conv' for component 'pad_input:rsci' (LIB-3)
+# Global signal 'pad_input:rsc.q' added to design 'apply_conv' for component 'pad_input:rsci' (LIB-3)
+# Global signal 'pad_input:rsc.radr' added to design 'apply_conv' for component 'pad_input:rsci' (LIB-3)
+# Global signal 'conv_in:rsc.triosy.lz' added to design 'apply_conv' for component 'conv_in:rsc.triosy:obj' (LIB-3)
+# Global signal 'conv_out:rsc.triosy.lz' added to design 'apply_conv' for component 'conv_out:rsc.triosy:obj' (LIB-3)
+# Info: $PROJECT_HOME/convolution.cpp(6): Loop '/apply_conv/core/main' is pipelined with initiation interval 1 and no flushing (SCHD-43)
+# Info: Optimizing partition '/apply_conv': (Total ops = 555, Real ops = 188, Vars = 212) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/core': (Total ops = 476, Real ops = 185, Vars = 166) (SOL-10)
+# Info: $PROJECT_HOME/convolution.cpp(34): Splitting object 'lfst:exit:CONV_NB_K.lpi#1.dfm' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(34): Splitting object 'lfst:exit:CONV_NB_K.lpi#1.dfm#2' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(34): Splitting object 'lfst:exit:CONV_NB_K.lpi#1.dfm#3' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(22): Splitting object 'PAD:for:for:if:acc.itm' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(22): Splitting object 'PAD:for:for:if:acc.itm#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(25): Splitting object 'PAD:for:for:else:if:acc.itm' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(25): Splitting object 'PAD:for:for:else:if:acc.itm#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(28): Splitting object 'PAD:for:for:else:else:acc.itm' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(28): Splitting object 'PAD:for:for:else:else:acc.itm#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(41): Splitting object 'CONV_K_W:acc#14.itm' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(41): Splitting object 'CONV_K_W:acc#14.itm#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(51): Splitting object 'CONV_H_SLIDE:acc#10.itm' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(51): Splitting object 'CONV_H_SLIDE:acc#10.itm#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(51): Splitting object 'CONV_H_SLIDE:acc#10.itm#2' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(34): Splitting object 'lfst:exit:CONV_NB_K.lpi#1.dfm.st#1' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(34): Splitting object 'lfst:exit:CONV_NB_K.lpi#1.dfm.st#2' into 2 segments (OPT-19)
+# Info: $PROJECT_HOME/convolution.cpp(51): Splitting object 'CONV_H_SLIDE:acc#11.sdt' into 2 segments (OPT-19)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/core': (Total ops = 442, Real ops = 175, Vars = 170) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/core': (Total ops = 438, Real ops = 174, Vars = 164) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/core': (Total ops = 438, Real ops = 174, Vars = 163) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 517, Real ops = 177, Vars = 209) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/core': (Total ops = 438, Real ops = 174, Vars = 163) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 517, Real ops = 177, Vars = 209) (SOL-10)
+# Report written to file 'cycle.rpt'
+# Info: Completed transformation 'schedule' on solution 'apply_conv.v1': elapsed time 5.41 seconds, memory usage 1003140kB, peak memory usage 1003140kB (SOL-9)
+# Info: Starting transformation 'dpfsm' on solution 'apply_conv.v1' (SOL-8)
+# Performing FSM extraction... (FSM-1)
+# Info: Optimizing partition '/apply_conv': (Total ops = 1132, Real ops = 483, Vars = 1102) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 700, Real ops = 452, Vars = 237) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 681, Real ops = 427, Vars = 220) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 680, Real ops = 426, Vars = 219) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 676, Real ops = 408, Vars = 229) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 666, Real ops = 408, Vars = 219) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 666, Real ops = 408, Vars = 207) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 666, Real ops = 408, Vars = 207) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 666, Real ops = 408, Vars = 207) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 692, Real ops = 434, Vars = 236) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 668, Real ops = 410, Vars = 212) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 668, Real ops = 410, Vars = 212) (SOL-10)
+# Info: Completed transformation 'dpfsm' on solution 'apply_conv.v1': elapsed time 0.99 seconds, memory usage 1003140kB, peak memory usage 1003140kB (SOL-9)
+# Info: Starting transformation 'instance' on solution 'apply_conv.v1' (SOL-8)
+# Reassigned operation CONV_NB_K:mux1h#12:mgc_mux1hot(7,3) to mgc_mux1hot(7,4) (ASG-1)
+# Reassigned operation CONV_H_SLIDE:acc#12:mgc_add_pipe(5,0,7,0,8,1,0,0,1,0,2,0,0,0) to mgc_add(7,0,5,0,8) (ASG-1)
+# Reassigned operation PAD:for:for:else:else:acc#14:mgc_add_pipe(6,1,7,0,9,1,0,0,1,0,2,0,0,0) to mgc_add(7,0,6,1,9) (ASG-1)
+# Info: Optimizing partition '/apply_conv': (Total ops = 668, Real ops = 410, Vars = 620) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 588, Real ops = 370, Vars = 236) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 545, Real ops = 342, Vars = 201) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 544, Real ops = 341, Vars = 200) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 544, Real ops = 341, Vars = 200) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 544, Real ops = 341, Vars = 200) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 544, Real ops = 341, Vars = 200) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Netlist written to file 'schematic.nlv' (NET-4)
+# Info: Completed transformation 'instance' on solution 'apply_conv.v1': elapsed time 0.51 seconds, memory usage 1003140kB, peak memory usage 1003140kB (SOL-9)
+# Info: Starting transformation 'extract' on solution 'apply_conv.v1' (SOL-8)
+# Info: Optimizing partition '/apply_conv': (Total ops = 544, Real ops = 341, Vars = 200) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Info: Optimizing partition '/apply_conv': (Total ops = 544, Real ops = 341, Vars = 200) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm': (Total ops = 5, Real ops = 2, Vars = 4) (SOL-10)
+# Info: Optimizing partition '/apply_conv/apply_conv:core/apply_conv:core_core:fsm/apply_conv:core_core:fsm': (Total ops = 4, Real ops = 1, Vars = 1) (SOL-10)
+# Report written to file 'rtl.rpt'
+# Netlist written to file 'rtl.vhdl' (NET-4)
+# generate concat
+# order file name is: rtl.vhdl_order.txt
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src/funcs.vhd
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_ioport_comps_v11.vhd
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_io_sync_v1.vhd
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated file: /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/Catapult/apply_conv.v1/concat_rtl.vhdl
+# order file name is: rtl.vhdl_order_sim.txt
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src/funcs.vhd
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_ioport_comps_v11.vhd
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_io_sync_v1.vhd
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.vhd
+# Add dependent file: ./rtl.vhdl
+# Finished writing concatenated simulation file: /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/Catapult/apply_conv.v1/concat_sim_rtl.vhdl
+# Makefile for RTL VHDL output 'rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_rtl_vhdl_msim.mk'
+# Synthesis script written to file 'rtl.vhdl.psr'
+# Synthesis script written to file 'concat_rtl.vhdl.psr'
+# Makefile for Concat RTL VHDL output 'concat_sim_rtl.vhdl' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_vhdl_msim.mk'
+# Netlist written to file 'rtl.v' (NET-4)
+# generate concat
+# order file name is: rtl.v_order.txt
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_io_sync_v1.v
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated file: /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/Catapult/apply_conv.v1/concat_rtl.v
+# order file name is: rtl.v_order_sim.txt
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_io_sync_v1.v
+# Add dependent file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.v
+# Add dependent file: ./rtl.v
+# Finished writing concatenated simulation file: /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/Catapult/apply_conv.v1/concat_sim_rtl.v
+# Makefile for RTL Verilog output 'rtl.v' vs Untimed C++ written to file './scverify/Verify_rtl_v_msim.mk'
+# Synthesis script written to file 'rtl.v.psr'
+# Synthesis script written to file 'concat_rtl.v.psr'
+# Makefile for Concat RTL Verilog output 'concat_sim_rtl.v' vs Untimed C++ written to file './scverify/Verify_concat_sim_rtl_v_msim.mk'
+# Info: Completed transformation 'extract' on solution 'apply_conv.v1': elapsed time 8.66 seconds, memory usage 1002112kB, peak memory usage 1003140kB (SOL-9)
+# > end dofile /tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/directives.tcl
+flow run /SCVerify/launch_make ./scverify/Verify_rtl_vhdl_msim.mk {} SIMTOOL=msim build
+# Making './scverify/Verify_rtl_vhdl_msim.mk SIMTOOL=msim build'
+# Make utility invoked from '/tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/Catapult/apply_conv.v1'
+#     /softl3/catapultc10_0a/64bit/Mgc_home/bin/make -f ./scverify/Verify_rtl_vhdl_msim.mk SIMTOOL=msim build < "/dev/null" (BASIC-15)
+# ============================================
+# Creating simulation directory 'scverify/rtl_vhdl_msim'
+# mkdir -p scverify/rtl_vhdl_msim
+# ============================================
+# Setting up default modelsim.ini file from '/softslin/modelsim10_2c/modeltech/linux/../modelsim.ini'
+# cat "/softslin/modelsim10_2c/modeltech/linux/../modelsim.ini" >scverify/rtl_vhdl_msim/modelsim.ini
+# ============================================
+# Creating physical library 'scverify/rtl_vhdl_msim/mgc_hls'
+# /softslin/modelsim10_2c/modeltech/linux/vlib scverify/rtl_vhdl_msim/mgc_hls
+# ============================================
+# Mapping logical library 'mgc_hls' to physical path '$SCVLIBS/scverify/rtl_vhdl_msim/mgc_hls'
+# /softslin/modelsim10_2c/modeltech/linux/vmap mgc_hls \$SCVLIBS/scverify/rtl_vhdl_msim/mgc_hls
+# Modifying scverify/rtl_vhdl_msim/modelsim.ini
+# ============================================
+# Creating physical library 'scverify/rtl_vhdl_msim/work'
+# /softslin/modelsim10_2c/modeltech/linux/vlib scverify/rtl_vhdl_msim/work
+# ============================================
+# Mapping logical library 'work' to physical path '$SCVLIBS/scverify/rtl_vhdl_msim/work'
+# /softslin/modelsim10_2c/modeltech/linux/vmap work \$SCVLIBS/scverify/rtl_vhdl_msim/work
+# Modifying scverify/rtl_vhdl_msim/modelsim.ini
+# ============================================
+# Creating ModelSim wave TCL file 'scverify/rtl_vhdl_msim/scverify_msim_wave.tcl' from 'scverify/ccs_wave_signals.dat'
+# /softl3/catapultc10_0a/64bit/Mgc_home/bin/tclsh8.5 /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/sif/userware/En_na/flows/app_msim.flo create_msim_wave ./Catapult/apply_conv.v1/scverify/ccs_wave_signals.dat scverify/rtl_vhdl_msim/scverify_msim_wave.tcl ./Catapult/apply_conv.v1/.dut_inst_info.tcl 
+# app_msim.flo - Executing command 'create_msim_wave ./Catapult/apply_conv.v1/scverify/ccs_wave_signals.dat scverify/rtl_vhdl_msim/scverify_msim_wave.tcl ./Catapult/apply_conv.v1/.dut_inst_info.tcl'...
+# Wrote ModelSim waveform creation script to 'scverify/rtl_vhdl_msim/scverify_msim_wave.tcl'
+# ============================================
+# Compiling VHDL file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src/funcs.vhd
+# /softslin/modelsim10_2c/modeltech/linux/vcom -work mgc_hls  -novopt  /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src/funcs.vhd
+# Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
+# -- Loading package STANDARD
+# -- Compiling package attributes
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling package funcs
+# -- Compiling package body funcs
+# -- Loading package funcs
+# ============================================
+# Compiling VHDL file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_ioport_comps_v11.vhd
+# /softslin/modelsim10_2c/modeltech/linux/vcom -work mgc_hls  -novopt  /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_ioport_comps_v11.vhd
+# Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling package mgc_ioport_comps_v11
+# ============================================
+# Compiling VHDL file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_io_sync_v1.vhd
+# /softslin/modelsim10_2c/modeltech/linux/vcom -work mgc_hls  -novopt  /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_io_sync_v1.vhd
+# Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity mgc_io_sync_v1
+# -- Compiling architecture beh of mgc_io_sync_v1
+# -- Compiling entity mgc_in_sync_v1
+# -- Compiling architecture beh of mgc_in_sync_v1
+# ============================================
+# Compiling VHDL file: /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.vhd
+# /softslin/modelsim10_2c/modeltech/linux/vcom -work work  -novopt  /softl3/catapultc10_0a/64bit/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.vhd
+# Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package BLOCK_1R1W_RBW_pkg
+# -- Compiling entity BLOCK_1R1W_RBW
+# -- Compiling architecture rtl of BLOCK_1R1W_RBW
+# ============================================
+# Compiling VHDL file: rtl.vhdl
+# /softslin/modelsim10_2c/modeltech/linux/vcom -work work  -novopt  rtl.vhdl
+# Model Technology ModelSim SE-64 vcom 10.2c Compiler 2013.07 Jul 18 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package funcs
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package mgc_ioport_comps_v11
+# -- Loading package NUMERIC_STD
+# -- Loading package BLOCK_1R1W_RBW_pkg
+# -- Compiling entity Xilinx_RAMS_BLOCK_1R1W_RBW_rwport_8_16_59292_3_gen
+# -- Compiling architecture v1 of Xilinx_RAMS_BLOCK_1R1W_RBW_rwport_8_16_59292_3_gen
+# -- Compiling entity Xilinx_RAMS_BLOCK_1R1W_RBW_wport_8_17_76800_2_gen
+# -- Compiling architecture v1 of Xilinx_RAMS_BLOCK_1R1W_RBW_wport_8_17_76800_2_gen
+# -- Compiling entity Xilinx_RAMS_BLOCK_1R1W_RBW_rport_8_16_57600_1_gen
+# -- Compiling architecture v1 of Xilinx_RAMS_BLOCK_1R1W_RBW_rport_8_16_57600_1_gen
+# -- Compiling entity apply_conv_core_core_fsm
+# -- Compiling architecture v1 of apply_conv_core_core_fsm
+# -- Compiling entity apply_conv_core
+# -- Compiling architecture v1 of apply_conv_core
+# -- Compiling entity apply_conv
+# -- Compiling architecture v1 of apply_conv
+# ============================================
+# Compiling C++ file: ../../testbench.cpp
+# /softslin/modelsim10_2c/modeltech/linux/sccom -g -x c++ -Wall -Wno-unknown-pragmas  -DCCS_DUT_RTL -DCCS_DUT_VHDL -DCCS_SCVERIFY -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DTOP_HDL_ENTITY=apply_conv -DCCS_DESIGN_FUNC_apply_conv -DCCS_DESIGN_TOP_apply_conv -DCCS_MISMATCHED_OUTPUTS_ONLY  -DDEADLOCK_DETECTION -I./scverify -I. -I../.. -I./scverify -I. -I../.. -I/softl3/catapultc10_0a/64bit/Mgc_home/shared/include -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DUSE_STD_STRING -DSC_INCLUDE_MTI_AC  -c ../../testbench.cpp
+# 
+# Model Technology ModelSim SE-64 sccom 10.2c compiler 2013.07 Jul 18 2013
+# ============================================
+# Compiling C++ file: ../../image.cpp
+# /softslin/modelsim10_2c/modeltech/linux/sccom -g -x c++ -Wall -Wno-unknown-pragmas  -DCCS_DUT_RTL -DCCS_DUT_VHDL -DCCS_SCVERIFY -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DTOP_HDL_ENTITY=apply_conv -DCCS_DESIGN_FUNC_apply_conv -DCCS_DESIGN_TOP_apply_conv -DCCS_MISMATCHED_OUTPUTS_ONLY  -DDEADLOCK_DETECTION -I./scverify -I. -I../.. -I./scverify -I. -I../.. -I/softl3/catapultc10_0a/64bit/Mgc_home/shared/include -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DUSE_STD_STRING -DSC_INCLUDE_MTI_AC  -c ../../image.cpp
+# 
+# Model Technology ModelSim SE-64 sccom 10.2c compiler 2013.07 Jul 18 2013
+# ============================================
+# Compiling C++ file: ../../kernel.cpp
+# /softslin/modelsim10_2c/modeltech/linux/sccom -g -x c++ -Wall -Wno-unknown-pragmas  -DCCS_DUT_RTL -DCCS_DUT_VHDL -DCCS_SCVERIFY -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DTOP_HDL_ENTITY=apply_conv -DCCS_DESIGN_FUNC_apply_conv -DCCS_DESIGN_TOP_apply_conv -DCCS_MISMATCHED_OUTPUTS_ONLY  -DDEADLOCK_DETECTION -I./scverify -I. -I../.. -I./scverify -I. -I../.. -I/softl3/catapultc10_0a/64bit/Mgc_home/shared/include -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DUSE_STD_STRING -DSC_INCLUDE_MTI_AC  -c ../../kernel.cpp
+# 
+# Model Technology ModelSim SE-64 sccom 10.2c compiler 2013.07 Jul 18 2013
+# ============================================
+# Compiling C++ file: ../../convolution.cpp
+# /softslin/modelsim10_2c/modeltech/linux/sccom -g -x c++ -Wall -Wno-unknown-pragmas  -DCCS_DUT_RTL -DCCS_DUT_VHDL -DCCS_SCVERIFY -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DTOP_HDL_ENTITY=apply_conv -DCCS_DESIGN_FUNC_apply_conv -DCCS_DESIGN_TOP_apply_conv -DCCS_MISMATCHED_OUTPUTS_ONLY  -DDEADLOCK_DETECTION -I./scverify -I. -I../.. -I./scverify -I. -I../.. -I/softl3/catapultc10_0a/64bit/Mgc_home/shared/include -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DUSE_STD_STRING -DSC_INCLUDE_MTI_AC  -c ../../convolution.cpp
+# 
+# Model Technology ModelSim SE-64 sccom 10.2c compiler 2013.07 Jul 18 2013
+# 
+# ../../convolution.cpp: In function 'void apply_conv(in_t*, out_t*)':
+# ../../convolution.cpp:18:1: warning: label 'PAD' defined but not used
+# ../../convolution.cpp:34:1: warning: label 'CONV_NB_K' defined but not used
+# ../../convolution.cpp:35:9: warning: label 'CONV_V_SLIDE' defined but not used
+# ../../convolution.cpp:36:13: warning: label 'CONV_H_SLIDE' defined but not used
+# ../../convolution.cpp:40:25: warning: label 'CONV_K_W' defined but not used
+# ../../convolution.cpp:38:17: warning: label 'CONV_K_D' defined but not used
+# ../../convolution.cpp:39:21: warning: label 'CONV_K_H' defined but not used
+# ============================================
+# Compiling C++ file: scverify/mc_testbench.cpp
+# /softslin/modelsim10_2c/modeltech/linux/sccom -g -x c++ -Wall -Wno-unknown-pragmas  -DCCS_DUT_RTL -DCCS_DUT_VHDL -DCCS_SCVERIFY -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DTOP_HDL_ENTITY=apply_conv -DCCS_DESIGN_FUNC_apply_conv -DCCS_DESIGN_TOP_apply_conv -DCCS_MISMATCHED_OUTPUTS_ONLY  -DDEADLOCK_DETECTION -I./scverify -I. -I../.. -I./scverify -I. -I../.. -I/softl3/catapultc10_0a/64bit/Mgc_home/shared/include -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DUSE_STD_STRING -DSC_INCLUDE_MTI_AC  -c scverify/mc_testbench.cpp
+# 
+# Model Technology ModelSim SE-64 sccom 10.2c compiler 2013.07 Jul 18 2013
+# ============================================
+# Compiling C++ file: scverify/scverify_top.cpp
+# /softslin/modelsim10_2c/modeltech/linux/sccom -g -x c++ -Wall -Wno-unknown-pragmas  -DCCS_DUT_RTL -DCCS_DUT_VHDL -DCCS_SCVERIFY -DSC_INCLUDE_DYNAMIC_PROCESSES -DSC_USE_STD_STRING -DTOP_HDL_ENTITY=apply_conv -DCCS_DESIGN_FUNC_apply_conv -DCCS_DESIGN_TOP_apply_conv -DCCS_MISMATCHED_OUTPUTS_ONLY  -DDEADLOCK_DETECTION -I./scverify -I. -I../.. -I./scverify -I. -I../.. -I/softl3/catapultc10_0a/64bit/Mgc_home/shared/include -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/src -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs -I/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/mgc_comps_src -DUSE_STD_STRING -DSC_INCLUDE_MTI_AC  -c scverify/scverify_top.cpp
+# 
+# Model Technology ModelSim SE-64 sccom 10.2c compiler 2013.07 Jul 18 2013
+# 
+# In file included from /softl3/modelsim10_2c/modeltech/include/systemc/sc_bv_base.h:43:0,
+#                  from /softl3/modelsim10_2c/modeltech/include/systemc/sc_bv.h:42,
+#                  from /softl3/modelsim10_2c/modeltech/include/systemc/sc_signal_mti.h:1,
+#                  from /softl3/modelsim10_2c/modeltech/include/systemc/sc_signal.h:1012,
+#                  from /softl3/modelsim10_2c/modeltech/include/systemc/sc_buffer.h:43,
+#                  from /softl3/modelsim10_2c/modeltech/include/systemc/systemc:56,
+#                  from /softl3/modelsim10_2c/modeltech/include/systemc/systemc.h:239,
+#                  from scverify/mc_testbench.h:31,
+#                  from scverify/scverify_top.cpp:4:
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_bit_proxies.h: In member function 'void sc_dt::sc_subref_r<X>::set_word(int, sc_dt::sc_digit) [with X = sc_dt::sc_lv_base, sc_dt::sc_digit = unsigned int]':
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_proxy.h:633:5:   instantiated from 'void sc_dt::set_words_(X&, int, sc_dt::sc_digit, sc_dt::sc_digit) [with X = sc_dt::sc_subref_r<sc_dt::sc_lv_base>, sc_dt::sc_digit = unsigned int]'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_proxy.h:664:6:   instantiated from 'void sc_dt::assign_p_(sc_dt::sc_proxy<X>&, const sc_dt::sc_proxy<Y>&) [with X = sc_dt::sc_subref_r<sc_dt::sc_lv_base>, Y = sc_dt::sc_lv_base]'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_proxy.h:132:4:   instantiated from 'X& sc_dt::sc_proxy<X>::assign_(const sc_dt::sc_proxy<Y>&) [with Y = sc_dt::sc_lv_base, X = sc_dt::sc_subref_r<sc_dt::sc_lv_base>]'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_bit_proxies.h:998:4:   instantiated from 'sc_dt::sc_subref<X>& sc_dt::sc_subref<X>::operator=(const sc_dt::sc_proxy<Y>&) [with Y = sc_dt::sc_lv_base, X = sc_dt::sc_lv_base]'
+# /softl3/catapultc10_0a/64bit/Mgc_home/shared/include/mc_typeconv.h:489:8:   instantiated from 'void type_to_vector(const mgc_sysc_ver_array1D<Tclass, Tsize>&, int, sc_dt::sc_lv<Twidth>&) [with Tclass = mti_ac::ac_fixed<8, 8, false, (mti_ac::ac_q_mode)0u, (mti_ac::ac_o_mode)0u>, int V = 57600, int Twidth = 460800]'
+# /softl3/catapultc10_0a/64bit/Mgc_home/shared/include/mc_transactors.h:868:7:   instantiated from 'void mc_input_transactor<Tclass, Telemwidth, Tsigned>::receive_value_from_tb() [with Tclass = mgc_sysc_ver_array1D<mti_ac::ac_fixed<8, 8, false, (mti_ac::ac_q_mode)0u, (mti_ac::ac_o_mode)0u>, 57600>, int Telemwidth = 8, bool Tsigned = false]'
+# scverify/scverify_top.cpp:370:31:   instantiated from here
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_bit_proxies.h:2568:6: warning: suggest parentheses around arithmetic in operand of '|'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_bit_proxies.h:2575:6: warning: suggest parentheses around arithmetic in operand of '|'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_bit_proxies.h: In member function 'void sc_dt::sc_subref_r<X>::set_cword(int, sc_dt::sc_digit) [with X = sc_dt::sc_lv_base, sc_dt::sc_digit = unsigned int]':
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_proxy.h:634:5:   instantiated from 'void sc_dt::set_words_(X&, int, sc_dt::sc_digit, sc_dt::sc_digit) [with X = sc_dt::sc_subref_r<sc_dt::sc_lv_base>, sc_dt::sc_digit = unsigned int]'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_proxy.h:664:6:   instantiated from 'void sc_dt::assign_p_(sc_dt::sc_proxy<X>&, const sc_dt::sc_proxy<Y>&) [with X = sc_dt::sc_subref_r<sc_dt::sc_lv_base>, Y = sc_dt::sc_lv_base]'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_proxy.h:132:4:   instantiated from 'X& sc_dt::sc_proxy<X>::assign_(const sc_dt::sc_proxy<Y>&) [with Y = sc_dt::sc_lv_base, X = sc_dt::sc_subref_r<sc_dt::sc_lv_base>]'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_bit_proxies.h:998:4:   instantiated from 'sc_dt::sc_subref<X>& sc_dt::sc_subref<X>::operator=(const sc_dt::sc_proxy<Y>&) [with Y = sc_dt::sc_lv_base, X = sc_dt::sc_lv_base]'
+# /softl3/catapultc10_0a/64bit/Mgc_home/shared/include/mc_typeconv.h:489:8:   instantiated from 'void type_to_vector(const mgc_sysc_ver_array1D<Tclass, Tsize>&, int, sc_dt::sc_lv<Twidth>&) [with Tclass = mti_ac::ac_fixed<8, 8, false, (mti_ac::ac_q_mode)0u, (mti_ac::ac_o_mode)0u>, int V = 57600, int Twidth = 460800]'
+# /softl3/catapultc10_0a/64bit/Mgc_home/shared/include/mc_transactors.h:868:7:   instantiated from 'void mc_input_transactor<Tclass, Telemwidth, Tsigned>::receive_value_from_tb() [with Tclass = mgc_sysc_ver_array1D<mti_ac::ac_fixed<8, 8, false, (mti_ac::ac_q_mode)0u, (mti_ac::ac_o_mode)0u>, 57600>, int Telemwidth = 8, bool Tsigned = false]'
+# scverify/scverify_top.cpp:370:31:   instantiated from here
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_bit_proxies.h:2619:6: warning: suggest parentheses around arithmetic in operand of '|'
+# /softl3/modelsim10_2c/modeltech/include/systemc/sc_bit_proxies.h:2626:6: warning: suggest parentheses around arithmetic in operand of '|'
+# 
+# Exported modules:
+# 	scverify_top
+# ** Warning: (sccom-6102) The object "_data" is not debuggable. (/softl3/catapultc10_0a/64bit/Mgc_home/shared/include/mc_monitor.h, 144)
+# ============================================
+# Linking executable
+# /softslin/modelsim10_2c/modeltech/linux/sccom -link   -L /usr/lib -L /usr/lib/x86_64-linux-gnu  
+# 
+# Model Technology ModelSim SE-64 sccom 10.2c compiler 2013.07 Jul 18 2013
+flow run /SCVerify/launch_make ./scverify/Verify_rtl_vhdl_msim.mk {} SIMTOOL=msim simgui
+# Making './scverify/Verify_rtl_vhdl_msim.mk SIMTOOL=msim simgui'
+# Make utility invoked from '/tp/xph3sei/xph3sei702/Documents/cnn-accelerator/hls/convolution/release/Catapult/apply_conv.v1'
+#     /softl3/catapultc10_0a/64bit/Mgc_home/bin/make -f ./scverify/Verify_rtl_vhdl_msim.mk SIMTOOL=msim build < "/dev/null" (BASIC-15)
+# make: Nothing to be done for `build'.
+#     /softl3/catapultc10_0a/64bit/Mgc_home/bin/make -f ./scverify/Verify_rtl_vhdl_msim.mk SIMTOOL=msim simgui < "/dev/null" (BASIC-15)
+# 29969
