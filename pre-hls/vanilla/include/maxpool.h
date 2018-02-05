@@ -1,3 +1,9 @@
+/* maxpool.h
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #ifndef _MAXPOOL_H_
 #define _MAXPOOL_H_
 

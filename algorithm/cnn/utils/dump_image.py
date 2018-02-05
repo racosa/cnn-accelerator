@@ -1,14 +1,15 @@
+'''
+dump_image.py: script used dump image into text file
+
+authors: Rafael COSTA SALES
+         Duc Huy DAO
+'''
+
 import numpy as np
 from scipy.misc import imread, imsave
 
 img = imread('dog-160x120.jpg')
-#imsave('dog.jpg', img)
 final = img
-#final = np.concatenate((img[:,:,0].flatten('C'),
-#                        img[:,:,1].flatten('C'),
-#                        img[:,:,2].flatten('C')), axis=0)
-#final = final.reshape(1,-1)
-
 
 r = img[:,:,0].flatten('C')
 g = img[:,:,1].flatten('C')

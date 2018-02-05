@@ -1,3 +1,9 @@
+/* cifar10.h
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #ifndef _CIFAR10_H_
 #define _CIFAR10_H_
 

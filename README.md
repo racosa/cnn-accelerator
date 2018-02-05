@@ -1,6 +1,30 @@
-# Convolutional Neural Network (CNN) Accelerator
+# Convolutional Neural Network (CNN) Hardware Accelerator
+# gitlab.com/racosa/cnn-accelerator
+#
+# authors: Rafael COSTA SALES
+#          Duc Huy DAO
 
-## Research and Study
+## Directories:
+
+- ./algorithm/cnn: CNN reference code in python used to classify 
+  images of the cifar-10 test_batch (for more instructions see ./algorithm/cnn/README).
+
+- ./pre-hls: CNN pre-hls code 
+
+  -- ./pre-hls/db: database folder with cifar10 images and labels.
+  
+  -- ./pre-hls/vanilla: CNN implementation in C++, also tested
+      with cifar-10 test_batch  (for more instructions see ./pre-hls/vanilla/README).
+      
+  -- ./pre-hls/fixed-point: CNN implementation in C++ using fixed poit
+      precision with the library ac_fixed  (for more instructions see ./pre-hls/fixed-point/README).
+
+- ./hls: HLS code used to generate Convolution+ReLU RTL with Catapult.
+
+- ./fpga: top level VHDL entity used test Convolution+ReLU layer on FPGA 
+  and generated bitstreams.
+
+## Research and Study links
 
 - [Deep Learning Book](http://www.deeplearningbook.org/): Focus on Chap. 1, 6, 9, 11 and 12.
 
@@ -14,9 +38,9 @@
 
 - [Krizhevsky et al. - ImageNet Challenge Winner 2012](http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf)
 
--  [Intuitive Explanation to ConvNets](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/)
+- [Intuitive Explanation to ConvNets](https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/)
 
--  [Convolution](https://beckernick.github.io/convolutions/)
+- [Convolution](https://beckernick.github.io/convolutions/)
 
 ## Tutorials
 

@@ -1,0 +1,5 @@
+# HLS Convolution+ReLU Reference Code
+# authors: Rafael COSTA SALES
+#          Duc Huy DAO
+
+- Run the script ./compile.sh to compile 

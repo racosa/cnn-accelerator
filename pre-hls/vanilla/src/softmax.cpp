@@ -1,3 +1,10 @@
+/* softmax.cpp
+ * Simple softmax implementation.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "softmax.h"
 
 float softmax(float *input){

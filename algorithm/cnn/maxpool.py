@@ -1,3 +1,11 @@
+'''
+maxpool.py: Maxpool implementation
+
+authors: Rafael COSTA SALES
+         Duc Huy DAO
+'''
+
+
 import numpy as np
 from scipy.misc import imread, imsave, imresize
 

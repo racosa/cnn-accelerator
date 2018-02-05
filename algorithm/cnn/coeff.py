@@ -1,3 +1,10 @@
+'''
+coeff.py - Coefficients used to classify cifar-10 images
+
+authors: Rafael COSTA SALES
+         Duc Huy DAO
+'''
+
 import numpy as np
 
 conv1_biases = np.array(
@@ -7111,17 +7118,3 @@ local3_weights = np.array([[ -1.14765793e-01, -1.52515573e-02,  1.15063719e-01, 
  [  2.77840812e-02, -1.29483417e-02,  6.51101470e-02, -3.86175662e-02,
     5.91667406e-02,  6.47545140e-03, -3.21667679e-02,  8.65688622e-02,
    -7.45184869e-02,  2.34040506e-02]])
-
-print('conv1_weights: ', conv1_weights.shape)
-print('conv2_weights: ', conv2_weights.shape)
-print('conv3_weights: ', conv3_weights.shape)
-print('local3_biases: ', local3_biases.shape)
-print('local3_weights: ', local3_weights.shape)
-
-#conv1_weights_t = np.transpose(conv1_weights, (3, 2, 0, 1))
-#conv2_weights_t = np.transpose(conv2_weights, (3, 2, 0, 1))
-#conv3_weights_t = np.transpose(conv3_weights, (3, 2, 0, 1))
-
-#print('conv1_weights_t: ', conv1_weights_t.shape)
-#print('conv2_weights_t: ', conv2_weights_t.shape)
-#print('conv3_weights_t: ', conv3_weights_t.shape)

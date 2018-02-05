@@ -1,0 +1,24 @@
+# Pre-hls CNN code
+# authors: Rafael COSTA SALES
+#          Duc Huy DAO
+
+- ./vanilla: C++ floating point implementation
+
+- ./fixed-point: C++ fixed point implementation using the library ac_fixed
+
+- ./db: database folder containing input data files used by both vanilla and
+fixed point implementation. Three files are already present in the
+folder and others can be download from a Dropbox folder:
+
+ -- ./db/100-normalized-images.out: a subset of 100 images of the cifar10
+ test_batch normalized with a python script
+
+ -- ./db/100-normalized-images-fixW8I2.out: the same subset of the file
+ above limited between -2 and 1.984375.
+
+ -- ./db/100-labels.out: cifar-10 labels corresponding to the file above
+
+ -- The other normalized images and labels used to
+ test the CNN can be downloaded running the script ./db/download-data-c
+ or downloading them directly from this Dropbox folder: http://goo.gl/annxGb
+  

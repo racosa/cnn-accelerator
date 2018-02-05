@@ -1,14 +1,9 @@
-##############################
-## THIS IS A BASIC MAKEFILE ##
-##############################
-
 ## Folders ##
 
 SRC_DIR := src
 INCLUDE_DIR := include
 BUILD_DIR := build
 BIN_DIR := bin
-LIB_DIR := lib
 
 ## Commands and compile settings ##
 
@@ -18,15 +13,13 @@ CXXFLAGS = -std=c++11 -Wall -Werror -g
 # Uncomment the following to compile in debug mode with no optimizations
 # (for instance, this is useful to better track memory leaks):
 # DFLAGS = -g -O0
-IPATHS = -I$(INCLUDE_DIR) -I$(LIB_DIR)
-LPATHS = -L$(INCLUDE_DIR) -L$(LIB_DIR)
+IPATHS = -I$(INCLUDE_DIR)
+LPATHS = -L$(INCLUDE_DIR)
 # LDFLAGS =
 
 
 ## Files and resources ##
 
-
-LIB_FILES := $(shell find $(LIB_DIR) -type f -name "*.h")
 HPP_FILES := $(shell find $(INCLUDE_DIR) -type f -name "*.hpp")
 CPP_FILES := $(shell find $(SRC_DIR) -type f -name "*.cpp")
 OBJ_FILES := $(patsubst $(SRC_DIR)%,$(BUILD_DIR)%,$(CPP_FILES:.cpp=.o))
@@ -35,17 +28,14 @@ OBJ_FILES := $(patsubst $(SRC_DIR)%,$(BUILD_DIR)%,$(CPP_FILES:.cpp=.o))
 
 .PHONY: all format compile run check clean
 
-
 ## Entry point ##
 
 all: run
-
 
 ## Targets ##
 
 format:
 	@echo "$@ ..."
-	$(foreach f,$(LIB_FILES),$(FMT) $(f) ;)
 	$(foreach f,$(HPP_FILES),$(FMT) $(f) ;)
 	$(foreach f,$(CPP_FILES),$(FMT) $(f) ;)
 

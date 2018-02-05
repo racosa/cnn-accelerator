@@ -1,9 +1,15 @@
+'''
+cnn.py: Script to execute CNN over cifar-10 images
+
+authors: Rafael COSTA SALES
+         Duc Huy DAO
+'''
+
 import math as m
 import numpy as np
 from scipy.misc import imread, imsave, imresize
 
 import coeff as c
-#import normalize as n
 import conv_relu as c_r
 import maxpool as mp
 import fully_connected as fc
@@ -48,15 +54,8 @@ def apply_cnn(images, labels):
         print('# Detected: ', detected)
         print('# Rate: ', (detected/analyzed)*100, '%')
         
-#dict = n.unpickle('full-path-to-test-batch')
-#labels = dict[b'labels']
-#np.save('test-batch-labels.npy', labels)
-#images = n.normalize_dict(dict)
-#images = np.transpose(images, (0,1,2,3))
-#np.save('cifar10-test-batch-images.npy', images)
-
-# Labels and images npy files must be in the same folder
-# as this file. They are in Dropbox cifar10 folder
+# Labels and images npy files must be in the same folder as this file.
+# They must be downloaded from the Dropbox folder (see README for more instructions)
 labels = np.load('cifar10-test-batch-labels.npy')
 images = np.load('cifar10-test-batch-normalized-images.npy')
 apply_cnn(images, labels)

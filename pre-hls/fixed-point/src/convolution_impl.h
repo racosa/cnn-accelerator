@@ -1,3 +1,10 @@
+/* convolution_impl.h
+ * Convolution and ReLU layer template function.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 template <typename IP, typename OP>
 void Convolution::conv_layer(IP input[],
                              OP output[]) {

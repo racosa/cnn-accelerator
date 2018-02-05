@@ -1,3 +1,9 @@
+/* print_array.h
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #ifndef _PRINT_ARRAY_H_
 #define _PRINT_ARRAY_H_
 

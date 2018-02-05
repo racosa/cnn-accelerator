@@ -1,7 +1,13 @@
+/* convolution.cpp
+ * Convolution and ReLU layer implementation.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "math.h"
 #include "convolution.h"
 #include "kernel.h"
-//#pragma hls_design top
 
 void apply_conv(in_t *conv_in,
                 out_t *conv_out) {

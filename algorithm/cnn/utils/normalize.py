@@ -1,3 +1,10 @@
+'''
+normalize.py: script used to normalize cifar-10 batch files
+
+authors: Rafael COSTA SALES
+         Duc Huy DAO
+'''
+
 import numpy as np
 import math as m
 from scipy.misc import imread, imsave, imresize

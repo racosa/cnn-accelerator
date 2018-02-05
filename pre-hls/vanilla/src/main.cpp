@@ -1,3 +1,13 @@
+/* main.cpp
+ * Main function that runs CNN over cifar10 images. 
+ * By default it is configured to run over 100 images but
+ * more images can be download from Dropbox folder (see README 
+ * for more instructions)  
+ *
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include <iostream>
 #include <iomanip>
 #include "../include/cifar10.h"

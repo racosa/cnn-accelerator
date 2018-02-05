@@ -1,3 +1,10 @@
+/* testbench.cpp
+ * Convolution + ReLU layer testbench.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include <iomanip>
 #include <fstream>
 #include <iostream>
@@ -6,7 +13,6 @@
 #include "convolution.h"
 #include "image.h"
 
-//CCS_MAIN(int argc, char *argv) {
 int main() {
     std::cout << "# Starting Testbench \n";
     std::ofstream input("input.txt");
@@ -18,7 +24,6 @@ int main() {
       conv_out[i] = 0;
     }
  
-    //CCS_DESIGN(apply_conv)(conv_in, conv_out);
     apply_conv(conv_in, conv_out);
     
     for (int z = 0; z < INPUT_DEPTH; z++) {
@@ -33,14 +38,8 @@ int main() {
                     output << conv_out[z*INPUT_SIZE_X*INPUT_SIZE_Y + y*INPUT_SIZE_X + x] << " ";
                 }    
             }
-            //input << std::endl;
-            //output << std::endl;
-        }
-        //input << std::endl;
-        //output << std::endl;
-    }
+         }
+     }
     std::cout << "# End of Testbench \n";
-    
-    //CCS_RETURN(0);
     return 0;
 }

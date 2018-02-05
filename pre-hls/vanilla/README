@@ -1,0 +1,22 @@
+# Vanilla CNN Pre-hls
+# authors: Rafael COSTA SALES
+#          Duc Huy DAO
+
+- pre-hls code using floating point precision.
+
+- ./src: all .cpp files
+
+- ./include: all .h files
+
+- ./bin: executable file created after compilation
+
+- Makefile:
+ -- make all: to compile and run bin/run-cnn executable.
+
+ -- make clean: to clean compiled files
+
+- WARNING: You must always run "bin/run-cnn" from the "pre-hls/vannila/" folder,
+otherwise it won't find the image and label files located in "pre-hls/db/" folder.
+
+- See cnn-accelerator/pre-hls/README for instructions
+on how to download larger input data files.

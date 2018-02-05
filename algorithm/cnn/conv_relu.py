@@ -1,3 +1,10 @@
+'''
+conv_relu.py: Convolution implementation followed by a ReLU function
+
+authors: Rafael COSTA SALES
+         Duc Huy DAO
+'''
+
 import numpy as np
 
 def conv_relu_forward(x, k, b, stride=1, pad=1):

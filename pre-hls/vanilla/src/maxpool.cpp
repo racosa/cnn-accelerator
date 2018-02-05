@@ -1,3 +1,10 @@
+/* maxpool.cpp
+ * Maxpool function implementation.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "maxpool.h"
 
 Maxpool::Maxpool(const int input_size, const int input_depth)

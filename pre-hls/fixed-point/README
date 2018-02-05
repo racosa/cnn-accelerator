@@ -1,0 +1,23 @@
+# Fixed-point CNN Pre-hls
+# authors: Rafael COSTA SALES
+#          Duc Huy DAO
+
+- pre-hls code with fixed-point ac_fixed library.
+
+- make all: to compile and run bin/run-cnn executable.
+
+- ./src: all .cpp files
+
+- ./include: all .h files
+
+- ./bin: executable file created after compilation
+
+- ./lib: using ac_fixed library
+
+- Makefile:
+ -- make all: to compile and run bin/run-cnn executable.
+
+ -- make clean: to clean compiled files
+
+- WARNING: You must always run "bin/run-cnn" from the "pre-hls/vannila/" folder,
+otherwise it won't find the image and label files located in "pre-hls/db/" folder.

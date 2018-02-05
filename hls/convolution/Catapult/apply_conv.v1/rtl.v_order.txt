@@ -1,4 +1,0 @@
-/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/mgc_io_sync_v1.v
-/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/hls_pkgs/mgc_comps_src/mgc_generic_reg_beh.v
-/softl3/catapultc10_0a/64bit/Mgc_home/pkgs/siflibs/ram_singleport_be_fpga.v
-./rtl.v

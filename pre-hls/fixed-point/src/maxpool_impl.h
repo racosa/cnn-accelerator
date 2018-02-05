@@ -1,3 +1,10 @@
+/* maxpool_impl.h
+ * Maxpool template function implementation.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 template <typename IP, typename OP>
 void Maxpool::maxpool_layer(IP input[],
                             OP output[]) {

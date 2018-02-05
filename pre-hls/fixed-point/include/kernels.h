@@ -1,3 +1,9 @@
+/* kernels.h
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #ifndef _KERNELS_H_
 #define _KERNELS_H_
 #include "../include/fixed_point.h"

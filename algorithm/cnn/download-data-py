@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Script to download data files from Dropbox (see README for more instructions)
+
+wget https://www.dropbox.com/sh/sx5spfq76rm5149/AABZ2ehsi-3Te4tVANImNiLda/cifar10-test-batch-labels.npy
+
+wget https://www.dropbox.com/sh/sx5spfq76rm5149/AADU8qhn0vLDjCaXO-ScrHQSa/cifar10-test-batch-normalized-images.npy

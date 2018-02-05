@@ -1,0 +1,26 @@
+# CNN Reference Code (Python)
+
+## Download Data Files:
+
+- Before running please make sure that input data files
+are in the same folder as the cnn.py script
+
+- The normalized images file and the labels file
+used to test the CNN can be downloaded running the script
+./download-data-py or downloading them directly
+from this Dropbox folder: http://goo.gl/annxGb
+
+- After downloading you should have these files:
+
+ -- cnn-accelerator/algorithm/cnn/cifar10-test-batch-labels.npy (84KB):
+file containing the 10000 labels of the cifar-10 test_batch
+
+ -- cnn-accelerator/algorithm/cnn/cifar10-test-batch-normalized-images.npy (132MB):
+file containing the 10000 images of the cifar-10 test_batch normalized
+with the script cnn-accelerator/algorithm/cnn/utils/normalize.py
+
+## Running the CNN with cifar10 test_batch:
+
+- After downloading the data files you can run the CNN:
+
+  python cnn.py

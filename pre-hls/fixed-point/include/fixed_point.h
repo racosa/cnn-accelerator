@@ -1,3 +1,10 @@
+/* fixed_point.h
+ * Fixed point parameters.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #ifndef _FIXED_POINT_H_
 #define _FIXED_POINT_H_
 

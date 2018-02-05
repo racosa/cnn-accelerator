@@ -1,3 +1,10 @@
+/* cifar10.cpp
+ * Functions to read and print cifar10 files.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "../include/cifar10.h"
 
 int load_file(const char *file_name, float *buffer) {

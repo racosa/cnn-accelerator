@@ -1,3 +1,10 @@
+/* fc.cpp
+ * Reshape and Fully Connected (Perceptron) layers.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "../include/fc.h"
 
 void reshape(ac_fixed<FIXP_MP3_W, FIXP_MP3_I, true, AC_RND_ZERO> input[],

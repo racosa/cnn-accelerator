@@ -1,3 +1,10 @@
+/* convolution.cpp
+ * Convolution and ReLU layer implementation.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "convolution.h"
 
 Convolution::Convolution(const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true, AC_RND_ZERO> *kernel,
@@ -6,7 +13,7 @@ Convolution::Convolution(const ac_fixed<FIXP_KERNELS_W, FIXP_KERNELS_I, true, AC
                          const int input_size,
                          const int input_depth)
 :	kernel(kernel),
-  bias(bias),
+        bias(bias),
 	number_of_kernels(number_of_kernels),
 	input_size(input_size),
 	input_depth(input_depth)

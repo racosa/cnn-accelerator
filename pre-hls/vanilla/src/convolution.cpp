@@ -1,3 +1,10 @@
+/* convolution.cpp
+ * Convolution and ReLU layer implementation.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "convolution.h"
 
 Convolution::Convolution(const float *kernel,
@@ -20,29 +27,21 @@ Convolution::~Convolution()
 
 void Convolution::conv_layer(float input[], float output[]) {
 
-///// Zero padding /////
-
-/***** VERY QUESTIONABLE DECLARATION *****/
 	float pad_input[(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING)*input_depth];
-///////////////////////////////////////////
 
 	for (int d = 0; d < input_depth; d++) { // depth
 		for (int r = 0; r < input_size+2*ZERO_PADDING; r++) { // row
 			for (int c = 0; c < input_size+2*ZERO_PADDING; c++) { // column
-				if (r < ZERO_PADDING || r >= input_size+ZERO_PADDING) pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = 0;
-				else if (c < ZERO_PADDING || c >= input_size+ZERO_PADDING) pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = 0;
-				else pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = input[d*input_size*input_size + (r-ZERO_PADDING)*input_size + (c-ZERO_PADDING)];
-			}
+                            if (r < ZERO_PADDING || r >= input_size+ZERO_PADDING) {
+                                pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = 0;
+                            } else if (c < ZERO_PADDING || c >= input_size+ZERO_PADDING) {
+                                pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = 0;
+                            } else {
+                                pad_input[d*(input_size+2*ZERO_PADDING)*(input_size+2*ZERO_PADDING) + r*(input_size+2*ZERO_PADDING) + c] = input[d*input_size*input_size + (r-ZERO_PADDING)*input_size + (c-ZERO_PADDING)];
+                            }
+                        }
 		}
 	}
-
-///// end of zero padding /////
-
-/* ------------------------------- */
-
-///// Convolution calculation /////
-
-	// output[number_of_kernels][output_size][output_size]
 
 	unsigned int o_r = 0; // output row index
 	unsigned int o_c = 0; // output column index
@@ -61,9 +60,10 @@ void Convolution::conv_layer(float input[], float output[]) {
 				 	}
 				}
 				output[o_d*output_size*output_size + o_r*output_size + o_c] += bias[i]; // adding bias
-				// RELU
-				if (output[o_d*output_size*output_size + o_r*output_size + o_c] < 0) output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
-				////// end of conv op ///////
+				
+				if (output[o_d*output_size*output_size + o_r*output_size + o_c] < 0) {
+                                    output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
+				}
 				o_c+=1;
 			}
 			o_c = 0;
@@ -73,7 +73,4 @@ void Convolution::conv_layer(float input[], float output[]) {
 		o_r = 0;
 		o_d+=1;
 	}
-
-///// end of calculation /////
-
 }

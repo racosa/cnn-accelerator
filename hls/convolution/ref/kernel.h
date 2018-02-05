@@ -1,3 +1,9 @@
+/* kernel.h
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "ac_fixed.h"
 
 #define KERNEL_W 3

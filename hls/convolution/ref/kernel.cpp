@@ -1,3 +1,10 @@
+/* kernels.cpp
+ * Kernels used to test Convolution+ReLU layer.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "kernel.h"
 
 // Identity

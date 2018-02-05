@@ -1,3 +1,10 @@
+/* main.cpp
+ * Main function that runs CNN over cifar10 images. 
+ *   
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include <iostream>
 #include <iomanip>
 #include "../include/cifar10.h"

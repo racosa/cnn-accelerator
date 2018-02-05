@@ -1,3 +1,10 @@
+/* fc.cpp
+ * Reshape and Fully Connected (Perceptron) layers.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 void reshape(float input[], float output[]){
 
 	int output_length = 0;

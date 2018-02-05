@@ -1,3 +1,9 @@
+/* softmax.h
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include <algorithm>
 #include <math.h>
 #include <numeric>

@@ -1,3 +1,10 @@
+'''
+test_conv_relu.py: Script used to test convolution and relu layers
+
+authors: Rafael COSTA SALES
+         Duc Huy DAO
+'''
+
 import numpy as np
 from scipy.misc import imread, imsave
 

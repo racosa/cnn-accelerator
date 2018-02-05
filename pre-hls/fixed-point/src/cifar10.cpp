@@ -1,3 +1,10 @@
+/* cifar10.cpp
+ * Functions to read and print cifar10 files.
+ * 
+ * authors: Rafael COSTA SALES
+ *          Duc Huy DAO
+ */
+
 #include "../include/cifar10.h"
 
 int read_cifar10(uint8_t *images, uint8_t *labels) {
