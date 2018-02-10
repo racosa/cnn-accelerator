@@ -20,7 +20,7 @@
 - ./fpga: top level VHDL entity used test Convolution+ReLU layer on FPGA 
   and generated bitstreams.
 
-## Research and Study links
+## Research links
 
 - [Deep Learning Book](http://www.deeplearningbook.org/): Focus on Chap. 1, 6, 9, 11 and 12.
 
