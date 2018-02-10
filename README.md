@@ -1,8 +1,4 @@
 # Convolutional Neural Network (CNN) Hardware Accelerator
-# gitlab.com/racosa/cnn-accelerator
-#
-# authors: Rafael COSTA SALES
-#          Duc Huy DAO
 
 ## Directories:
 
@@ -11,12 +7,12 @@
 
 - ./pre-hls: CNN pre-hls code 
 
-  -- ./pre-hls/db: database folder with cifar10 images and labels.
+    + ./pre-hls/db: database folder with cifar10 images and labels.
   
-  -- ./pre-hls/vanilla: CNN implementation in C++, also tested
+    + ./pre-hls/vanilla: CNN implementation in C++, also tested
       with cifar-10 test_batch  (for more instructions see ./pre-hls/vanilla/README).
       
-  -- ./pre-hls/fixed-point: CNN implementation in C++ using fixed poit
+    + ./pre-hls/fixed-point: CNN implementation in C++ using fixed poit
       precision with the library ac_fixed  (for more instructions see ./pre-hls/fixed-point/README).
 
 - ./hls: HLS code used to generate Convolution+ReLU RTL with Catapult.
