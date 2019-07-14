@@ -1,7 +1,4 @@
 /* convolution.h
- *
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #ifndef _CONVOLUTION_H_
@@ -32,7 +29,7 @@ typedef ac_fixed<IN_W, IN_I, false> in_t;
 typedef ac_fixed<OUT_W, OUT_I, false> out_t;
 typedef ac_fixed<11, 11, true> temp_t;
 
-void apply_conv(in_t *conv_in, 
+void apply_conv(in_t *conv_in,
 		out_t *conv_out);
 
 #endif /* _CONVOLUTION_H_ */

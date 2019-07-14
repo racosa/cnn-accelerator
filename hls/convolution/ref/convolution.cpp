@@ -1,8 +1,5 @@
 /* convolution.cpp
  * Convolution and ReLU layer implementation.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "math.h"
@@ -11,17 +8,17 @@
 
 void apply_conv(in_t *conv_in,
                 out_t *conv_out) {
-  
-    in_t *input = conv_in;        
+
+    in_t *input = conv_in;
     out_t *output = conv_out;
-    temp_t temp = 0; 
+    temp_t temp = 0;
     int o_r = 0; // output row index
     int o_c = 0; // output column index
     int o_d = 0; // output depth index
-    
+
     in_t pad_input[(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING)*INPUT_DEPTH];
-    
-    //PAD: 
+
+    //PAD:
     for (int d = 0; d < INPUT_DEPTH; d++) { // depth
         for (int r = 0; r < INPUT_SIZE_Y+2*ZERO_PADDING; r++) { // row
             for (int c = 0; c < INPUT_SIZE_X+2*ZERO_PADDING; c++) { // column
@@ -29,7 +26,7 @@ void apply_conv(in_t *conv_in,
 		pad_input[d*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + r*(INPUT_SIZE_X+2*ZERO_PADDING) + c] = 0;
 	      }
 	      else if (c < ZERO_PADDING || c >= INPUT_SIZE_X+ZERO_PADDING) {
-		pad_input[d*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + r*(INPUT_SIZE_X+2*ZERO_PADDING) + c] = 0; 
+		pad_input[d*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + r*(INPUT_SIZE_X+2*ZERO_PADDING) + c] = 0;
 	      }
 	      else {
 		pad_input[d*(INPUT_SIZE_X+2*ZERO_PADDING)*(INPUT_SIZE_Y+2*ZERO_PADDING) + r*(INPUT_SIZE_X+2*ZERO_PADDING) + c] = input[d*INPUT_SIZE_X*INPUT_SIZE_Y + (r-ZERO_PADDING)*INPUT_SIZE_X + (c-ZERO_PADDING)];
@@ -70,7 +67,7 @@ void apply_conv(in_t *conv_in,
         o_r = 0;
         o_d+=1;
     }
-    
 
-    
+
+
 }
