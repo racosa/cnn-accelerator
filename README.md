@@ -1,7 +1,7 @@
 # cnn-accelerator
 
 A Convolutional Neural Network (CNN) hardware accelerator for image recognition.
-Tested with the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset
+Tested with the [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) dataset.
 
 ## Directories:
 
