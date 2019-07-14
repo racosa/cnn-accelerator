@@ -1,8 +1,5 @@
 /* softmax.cpp
  * Simple softmax implementation.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "softmax.h"
@@ -14,7 +11,7 @@ float softmax(float *input){
             max = input[i];
         }
     }
- 
+
     for(int i=0; i<10; i++){
         input[i] = exp(input[i] - max);
     }
@@ -23,11 +20,11 @@ float softmax(float *input){
     for(int i=1; i<10; i++){
         sum += input[i];
     }
-    
+
     for(int i=0; i<10; i++){
         input[i] = input[i]/sum;
     }
-    
+
     max = input[0];
     float max_index = 0;
     for (int i=1; i<10; i++) {

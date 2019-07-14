@@ -1,8 +1,5 @@
 /* load_file_impl.h
  * Template function to load cifar10 files
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 template <typename T>

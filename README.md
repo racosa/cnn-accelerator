@@ -2,23 +2,20 @@
 
 ## Directories:
 
-- ./algorithm/cnn: CNN reference code in python used to classify 
+- ./algorithm/cnn: CNN reference code in python used to classify
   images of the cifar-10 test_batch (for more instructions see ./algorithm/cnn/README).
 
-- ./pre-hls: CNN pre-hls code 
+- ./pre-hls: CNN pre-hls code
 
     + ./pre-hls/db: database folder with cifar10 images and labels.
-  
+
     + ./pre-hls/vanilla: CNN implementation in C++, also tested
       with cifar-10 test_batch  (for more instructions see ./pre-hls/vanilla/README).
-      
+
     + ./pre-hls/fixed-point: CNN implementation in C++ using fixed poit
       precision with the library ac_fixed  (for more instructions see ./pre-hls/fixed-point/README).
 
 - ./hls: HLS code used to generate Convolution+ReLU RTL with Catapult.
-
-- ./fpga: top level VHDL entity used test Convolution+ReLU layer on FPGA 
-  and generated bitstreams.
 
 ## Research links
 

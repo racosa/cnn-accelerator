@@ -1,8 +1,5 @@
 /* kernels.cpp
  * Kernels used to test Convolution+ReLU layer.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "kernel.h"
@@ -40,4 +37,3 @@ kernel_t kernel[81] = {0.0625, 0.125, 0.0625, 0.125, 0.25, 0.125, 0.0625, 0.125,
 
 
 kernel_t bias[3] = {0, 0 ,0};
-    

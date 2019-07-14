@@ -1,7 +1,4 @@
 /* cifar10.h
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #ifndef _CIFAR10_H_
@@ -10,7 +7,7 @@
 #include <fstream>
 #include <iostream>
 #include <stdint.h>
-#include <numeric> 
+#include <numeric>
 #include "../include/fixed_point.h"
 
 template <typename T>

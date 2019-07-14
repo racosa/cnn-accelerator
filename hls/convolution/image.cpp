@@ -1,8 +1,5 @@
 /* image.cpp
  * Input image.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "image.h"

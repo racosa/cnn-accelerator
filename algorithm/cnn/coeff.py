@@ -1,8 +1,5 @@
 '''
 coeff.py - Coefficients used to classify cifar-10 images
-
-authors: Rafael COSTA SALES
-         Duc Huy DAO
 '''
 
 import numpy as np

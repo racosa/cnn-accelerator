@@ -1,8 +1,5 @@
 '''
 normalize.py: script used to normalize cifar-10 batch files
-
-authors: Rafael COSTA SALES
-         Duc Huy DAO
 '''
 
 import numpy as np
@@ -28,4 +25,4 @@ def normalize_dict(dict):
     normalized_images = np.zeros((10000,24,24,3))
     for i in range(10000):
         normalized_images[i] = normalize(images[i])
-    return normalized_images   
+    return normalized_images

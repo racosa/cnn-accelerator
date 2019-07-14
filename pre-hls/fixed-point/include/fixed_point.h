@@ -1,8 +1,5 @@
 /* fixed_point.h
  * Fixed point parameters.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #ifndef _FIXED_POINT_H_
@@ -41,7 +38,7 @@
 #define FIXP_MP3_I 8
 
 #define FIXP_RESHAPE_W 11
-#define FIXP_RESHAPE_I 8 
+#define FIXP_RESHAPE_I 8
 
 #define FIXP_FC_W 11
 #define FIXP_FC_I 8

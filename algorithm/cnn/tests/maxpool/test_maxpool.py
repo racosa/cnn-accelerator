@@ -1,8 +1,5 @@
 '''
 test_maxpool.py: Script used to test maxpool layer
-
-authors: Rafael COSTA SALES
-         Duc Huy DAO
 '''
 
 import numpy as np
@@ -15,7 +12,7 @@ maxpool_one = {'size': 3,
 
 maxpool_layer_one = maxpool.Maxpool(maxpool_one['input_size'],
                                     maxpool_one['input_depth'],
-                                    maxpool_one['size'], maxpool_one['stride']) 
+                                    maxpool_one['size'], maxpool_one['stride'])
 
 k = np.array([[0,1,2,3,4,5],[5,6,7,8,9,10],[10,11,12,13,14,15],
               [0,1,2,3,4,5],[0,1,2,3,4,5],[10,11,12,13,14,15]])

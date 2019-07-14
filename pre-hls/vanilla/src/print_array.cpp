@@ -1,8 +1,5 @@
 /* print_array.cpp
  * Functions used to print arrays to cout
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include <iostream>

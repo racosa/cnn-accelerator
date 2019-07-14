@@ -1,7 +1,4 @@
 /* maxpool.h
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #ifndef _MAXPOOL_H_
@@ -23,7 +20,7 @@ private:
 public:
   Maxpool(const int input_size, const int input_depth);
   ~Maxpool();
-  
+
   template <typename IP, typename OP>
   void maxpool_layer(IP input[],
                      OP output[]);

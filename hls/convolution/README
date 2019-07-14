@@ -1,6 +1,4 @@
 # HLS Convolution+ReLU code
-# authors: Rafael COSTA SALES
-#          Duc Huy DAO
 
 - HLS code used to generate RTL with Catapult
 

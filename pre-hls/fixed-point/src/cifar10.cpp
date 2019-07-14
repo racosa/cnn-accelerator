@@ -1,8 +1,5 @@
 /* cifar10.cpp
  * Functions to read and print cifar10 files.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "../include/cifar10.h"
@@ -12,7 +9,7 @@ int read_cifar10(uint8_t *images, uint8_t *labels) {
     unsigned int lenght;
     char *buffer;
     int label_bytes = 0;
-    
+
     file.open("test_batch.bin", std::ios::in | std::ios::binary | std::ios::ate);
     if (!file) {
         std::cout << "# Error opening CIFAR-10 file: test_batch.bin. \n";
@@ -26,11 +23,11 @@ int read_cifar10(uint8_t *images, uint8_t *labels) {
     buffer = new char[lenght];
     file.read(buffer, lenght);
     file.close();
-    
+
     for (int i=0; i < 10000; i++) {
         labels[i] = (uint8_t)buffer[i*3073];
     }
-    
+
     for (int j = 0; j < 10000*3073; j++) {
         if (j%3073 == 0) {
             label_bytes++;
@@ -39,7 +36,7 @@ int read_cifar10(uint8_t *images, uint8_t *labels) {
             images[j - label_bytes] = (uint8_t)buffer[j];
         }
     }
-    
+
     delete[] buffer;
     return 0;
 }
@@ -49,7 +46,7 @@ int read_cifar10(uint8_t *images, uint8_t *labels) {
  * First byte is the label (0-9).
  * Then each 32 bytes represents a row.
  * First 1024 bytes = RED channel,
- * the next 1024 = GREEN channel, 
+ * the next 1024 = GREEN channel,
  * and the final 1024 = BLUE channel.
  */
 
@@ -58,7 +55,7 @@ int print_image(double *images, uint8_t *labels,  int index, bool normalized) {
     int width = 32;
     int channel_size = 1024;
     int image_size = 3072;
-    
+
     if(index >= 10000) {
         std::cout << "ERROR: Image not found.";
         return 1;
@@ -67,7 +64,7 @@ int print_image(double *images, uint8_t *labels,  int index, bool normalized) {
         channel_size = 576;
         image_size = 1728;
     }
-    
+
     std::cout << "Image label: " << (int)labels[index] << "\n";
 
     for (int d = 0; d<3; d++) {
@@ -82,7 +79,7 @@ int print_image(double *images, uint8_t *labels,  int index, bool normalized) {
                 } else {
                     std::cout << pixel << " ";
                 }
-                std::cout << pixel << " ";   
+                std::cout << pixel << " ";
             }
             std::cout << "\n";
         }

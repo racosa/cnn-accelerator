@@ -1,8 +1,5 @@
 '''
 cnn.py: Script to execute CNN over cifar-10 images
-
-authors: Rafael COSTA SALES
-         Duc Huy DAO
 '''
 
 import math as m
@@ -15,30 +12,30 @@ import maxpool as mp
 import fully_connected as fc
 import softmax as s
 
-def apply_cnn(images, labels):    
+def apply_cnn(images, labels):
 
     analyzed = 0
     detected = 0
-    
-    for idx,img in enumerate(images):        
+
+    for idx,img in enumerate(images):
         conv_one_out = c_r.conv_relu_forward(img,
                                              c.conv1_weights,
                                              c.conv1_biases)
-        
+
         mp_one_out = mp.maxpool_forward(conv_one_out)
-        
+
         conv_two_out = c_r.conv_relu_forward(mp_one_out,
                                              c.conv2_weights,
                                              c.conv2_biases)
-        
+
         mp_two_out = mp.maxpool_forward(conv_two_out)
-        
+
         conv_three_out = c_r.conv_relu_forward(mp_two_out,
                                                c.conv3_weights,
                                                c.conv3_biases)
 
         mp_three_out = mp.maxpool_forward(conv_three_out)
-        
+
         reshaped_out = mp_three_out.reshape(1,-1)
 
         fc_output = fc.fully_connected_forward(reshaped_out,
@@ -53,7 +50,7 @@ def apply_cnn(images, labels):
         print('# Analyzed: ', analyzed)
         print('# Detected: ', detected)
         print('# Rate: ', (detected/analyzed)*100, '%')
-        
+
 # Labels and images npy files must be in the same folder as this file.
 # They must be downloaded from the Dropbox folder (see README for more instructions)
 labels = np.load('cifar10-test-batch-labels.npy')

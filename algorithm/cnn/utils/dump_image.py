@@ -1,8 +1,5 @@
 '''
 dump_image.py: script used dump image into text file
-
-authors: Rafael COSTA SALES
-         Duc Huy DAO
 '''
 
 import numpy as np
@@ -20,5 +17,5 @@ for i in range(160*120):
         image[i*3] = r[i]
         image[i*3 +1] = g[i]
         image[i*3 +2] = b[i]
-        
+
 np.savetxt('test-rgb.txt', image.reshape(1,-1), fmt='%d')

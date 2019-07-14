@@ -1,7 +1,4 @@
 /* print_array.h
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #ifndef _PRINT_ARRAY_H_
@@ -10,7 +7,7 @@
 #include <iostream>
 
 template <typename T>
-int print_array(T array, int heigth, int width, int depth) {    
+int print_array(T array, int heigth, int width, int depth) {
     for (int d=0; d < depth; d++) {
         for (int x=0; x < heigth; x++) {
             for (int y=0; y < width; y++) {

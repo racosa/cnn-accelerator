@@ -1,7 +1,4 @@
 /* fc.h
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "../include/fixed_point.h"

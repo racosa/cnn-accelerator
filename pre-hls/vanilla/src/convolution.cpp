@@ -1,8 +1,5 @@
 /* convolution.cpp
  * Convolution and ReLU layer implementation.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "convolution.h"
@@ -60,7 +57,7 @@ void Convolution::conv_layer(float input[], float output[]) {
 				 	}
 				}
 				output[o_d*output_size*output_size + o_r*output_size + o_c] += bias[i]; // adding bias
-				
+
 				if (output[o_d*output_size*output_size + o_r*output_size + o_c] < 0) {
                                     output[o_d*output_size*output_size + o_r*output_size + o_c] = 0;
 				}

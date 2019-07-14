@@ -1,8 +1,5 @@
 '''
 test_conv_relu.py: Script used to test convolution and relu layers
-
-authors: Rafael COSTA SALES
-         Duc Huy DAO
 '''
 
 import numpy as np
@@ -10,10 +7,10 @@ from scipy.misc import imread, imsave
 
 def conv_relu_forward(x, k, b, stride=1, pad=1):
     in_h, in_w, depth = x.shape
-    k_h, k_w, depth, k_n = k.shape 
+    k_h, k_w, depth, k_n = k.shape
     out_h = 1 + (in_h + 2*pad - k_h)//stride
     out_w = 1 + (in_w + 2*pad - k_w)//stride
- 
+
     out = np.zeros((out_h, out_w, k_n))
     x_pad = np.pad(x,((pad,pad),(pad,pad),(0,0)),'constant')
 
@@ -27,7 +24,7 @@ def conv_relu_forward(x, k, b, stride=1, pad=1):
                     out[h//stride, w//stride, n] = 255
                 else:
                     out[h//stride, w//stride, n] = temp
-    return out       
+    return out
 
 identity = np.array([[[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]]],
               [[[0,0,0],[0,0,0],[0,0,0]],[[1,0,0],[0,1,0],[0,0,1]],[[0,0,0],[0,0,0],[0,0,0]]],

@@ -1,8 +1,5 @@
 '''
 coeff_parser.py: script used to parse coefficients and create numpy arrays
-
-authors: Rafael COSTA SALES
-         Duc Huy DAO
 '''
 
 import re

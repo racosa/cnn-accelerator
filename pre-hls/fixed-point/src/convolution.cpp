@@ -1,8 +1,5 @@
 /* convolution.cpp
  * Convolution and ReLU layer implementation.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "convolution.h"

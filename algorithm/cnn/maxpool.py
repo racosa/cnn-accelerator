@@ -1,8 +1,5 @@
 '''
 maxpool.py: Maxpool implementation
-
-authors: Rafael COSTA SALES
-         Duc Huy DAO
 '''
 
 
@@ -18,7 +15,7 @@ def maxpool_forward(x):
     out_h = 2 + (in_h - p_h)//stride
     out_w = 2 + (in_w - p_w)//stride
     out = np.zeros((out_h, out_w, depth))
-    
+
     for d in range(depth):
         for h in range(0, in_h, stride):
             for w in range(0, in_w, stride):

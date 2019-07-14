@@ -1,8 +1,5 @@
 /* fc.cpp
  * Reshape and Fully Connected (Perceptron) layers.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "../include/fc.h"

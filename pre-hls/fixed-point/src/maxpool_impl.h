@@ -1,8 +1,5 @@
 /* maxpool_impl.h
  * Maxpool template function implementation.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 template <typename IP, typename OP>
@@ -13,7 +10,7 @@ void Maxpool::maxpool_layer(IP input[],
 	/// VERY QUESTIONABLE DECLARATION ///
 	IP pad_input[(input_size+ZERO_PADDING)*(input_size+ZERO_PADDING)*input_depth];
 	/////////////////////////////////////
-        
+
 	for (int i = 0; i < input_depth; i++) {
 		for (int j = 0; j < input_size+ZERO_PADDING; j++) {
 			for (int k = 0; k < input_size+ZERO_PADDING; k++) {
@@ -22,7 +19,7 @@ void Maxpool::maxpool_layer(IP input[],
 			}
 		}
 	}
-       
+
 ///// end of zero padding /////
 
    unsigned int o_d = 0; // output depth

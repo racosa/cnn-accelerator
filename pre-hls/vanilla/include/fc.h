@@ -1,7 +1,4 @@
 /* fc.h
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 void reshape(float input[], float output[]);

@@ -1,8 +1,5 @@
 /* kernels.cpp
  * Kernels used to classify cifar10 images
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "../include/kernels.h"

@@ -1,6 +1,4 @@
 # Pre-hls CNN code
-# authors: Rafael COSTA SALES
-#          Duc Huy DAO
 
 - ./vanilla: C++ floating point implementation
 
@@ -21,4 +19,3 @@ folder and others can be download from a Dropbox folder:
  -- The other normalized images and labels used to
  test the CNN can be downloaded running the script ./db/download-data-c
  or downloading them directly from this Dropbox folder: http://goo.gl/annxGb
-  

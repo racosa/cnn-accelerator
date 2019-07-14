@@ -1,8 +1,5 @@
 /* maxpool.cpp
  * Maxpool function implementation.
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #include "maxpool.h"

@@ -1,7 +1,4 @@
 /* convolution.h
- *
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #ifndef _CONVOLUTION_H_
@@ -25,16 +22,16 @@
 #define STRIDE 1
 #define ZERO_PADDING 1
 
-#define IN_W 8 
+#define IN_W 8
 #define IN_I 8
-#define OUT_W 8 
+#define OUT_W 8
 #define OUT_I 8
 
 typedef ac_fixed<IN_W, IN_I, false> in_t;
 typedef ac_fixed<OUT_W, OUT_I, false> out_t;
 typedef ac_fixed<12, 8, false> temp_t;
 
-void apply_conv(in_t conv_in[DATA_SIZE], 
+void apply_conv(in_t conv_in[DATA_SIZE],
 		out_t conv_out[DATA_SIZE_OUT]);
 
 #endif /* _CONVOLUTION_H_ */

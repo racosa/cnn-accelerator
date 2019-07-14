@@ -1,7 +1,4 @@
 /* convolution.h
- * 
- * authors: Rafael COSTA SALES
- *          Duc Huy DAO
  */
 
 #ifndef _CONVOLUTION_H_
