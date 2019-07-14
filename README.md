@@ -1,4 +1,6 @@
-# Convolutional Neural Network (CNN) Hardware Accelerator
+# cnn-accelerator
+
+A Convolutional Neural Network (CNN) hardware accelerator
 
 ## Directories:
 
